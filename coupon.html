@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<!-- <link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/all.css" />
+		<link rel="stylesheet" href="css/indexTable.css"/>
+		<link rel="stylesheet" href="css/page_common.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/chengeIcon.js"></script>
+		<script type="text/javascript" src="js/changeShopPage.js"></script>
+		<script type="text/javascript" src="js/jumpPage.js"></script>
+		<script type="text/javascript" src="js/page_common.js"></script>
+		<script type="text/javascript" src="js/indexGiveData.js"></script>
+		<script type="text/javascript" src="js/InterShopDate.js"></script>
+		<script type="text/javascript" src="js/webHeight.js"></script>
+		<script type="text/javascript" src="js/deleteShop.js"></script>
+		<script type="text/javascript" src="js/jquerysession.js"></script>
+		<script type="text/javascript" src="js/loginDate.js"></script> -->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/all.css" />
+		<link rel="stylesheet" href="css/initGame.css" />
+		<link rel="stylesheet" href="css/dateSelect.css" />
+		<link rel="stylesheet" href="css/page_common.css" />
+		<link rel="stylesheet" href="css/initGameTable.css" />
+		<link rel="stylesheet" href="css/coupon.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/Unix.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/chengeIcon.js"></script>
+		<script type="text/javascript" src="js/changeShopPage.js"></script>
+		<script type="text/javascript" src="js/changeTime.js"></script>
+		<script type="text/javascript" src="js/jumpPage.js"></script>
+		<script type="text/javascript" src="js/popup.js"></script>
+		<script type="text/javascript" src="js/jquery.nicescroll.js"></script>
+		<script type="text/javascript" src="js/dateSelect.js"></script>
+		<script type="text/javascript" src="js/page_common.js"></script>
+		<!-- <script type="text/javascript" src="js/interGameDate.js"></script> -->
+		<script type="text/javascript" src="js/webHeight.js"></script>
+		<script type="text/javascript" src="js/deleteShop.js"></script>
+		<script type="text/javascript" src="js/jquerysession.js"></script>
+		<script type="text/javascript" src="js/loginDate.js"></script>
+		<script type="text/javascript" src="js/coupon.js"></script>
+		<script type="text/javascript" src="js/user.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				loginData();
+				// initDate(0, 10);
+				// initDate(0,10);
+				$("#couponCanBeginTime").dateSelect();
+				
+				$("#couponCanEndTime").dateSelect();
+				$(document).on("mouseover", ".editShop", function() {
+					$(this).find("img").attr("src", "img/map _edit_click.svg");
+				});
+				$(document).on("mouseout", ".editShop", function() {
+					$(this).find("img").attr("src", "img/map _edit备份.svg");
+				});
+				$(document).on("mouseover", ".deleteShop", function() {
+					$(this).find("img").attr("src", "img/Combined Shape.svg");
+				});
+				$(document).on("mouseout", ".deleteShop", function() {
+					$(this).find("img").attr("src", "img/3rd_trash_b备份 3.svg");
+				});
+		
+				$(document).on("mouseover", ".tableStyle tbody tr", function() {
+					$(this).css("background", "rgba(235,241,255,1)");
+				});
+				$(document).on("mouseout", ".tableStyle tbody tr", function() {
+					$(this).css("background", "rgba(255,255,255,1)");
+				});
+				$(document).on("mouseover", "#pageNumber li", function() {
+					$(this).addClass("currentPage");
+				});
+				$(document).on("mouseout", "#pageNumber li", function() {
+					var thisIndex = $("#pageNumber li").index(this);
+					var pageNum = parseInt($("#pageNum").val());
+					if (thisIndex == pageNum) {
+						return;
+					}
+					$(this).removeClass("currentPage");
+				});
+		
+		
+			})
+		</script>
+	</head>
+	<body>
+	
+		<!--主体-->
+		<div id="allContainer">
+			<!--弹窗-->
+			<div id="mask"></div>
+			<!-- <div id="popup">
+				<p class="text1">新建优惠券</p>
+				<p class="text2 close mouseGesture">X</p>
+				<div id="addCoupon">
+		
+					<div id="couponType">
+						<p>优惠券类型：</p>
+						<div id="all_deleteDiv">
+							<input type="radio" id="all_delete" name="couponType"/><label for="all_delete">满减券</label>
+						</div>
+						<div id="experienceDiv">
+							<input type="radio" id="experience" name="couponType"/><label for="experience">体验券</label>
+						</div>
+					</div>
+					<div class="couponTextDiv">
+						<label for="couponText">*优惠券内容：</label>
+						<input type="text" name="couponText" class="inputText" id="couponText" />
+					</div>
+					<div class="couponCanBeginTimeDiv">
+						<label for="couponCanBeginTime">*有效时间：</label>
+						<input type="text" name="couponCanBeginTime" class="inputText" id="couponCanBeginTime" />
+						<span>至</span>
+						<input type="text" name="couponCanEndTime" class="inputText" id="couponCanEndTime" />
+					</div>
+					<div class="couponGoBeginTimeDiv">
+						<label for="couponGoBeginTime">*发放时间：</label>
+						<input type="text" name="couponGoBeginTime" class="inputText" id="couponGoBeginTime" />
+						<span>至</span>
+						<input type="text" name="couponGoEndTime" class="inputText" id="couponGoEndTime" />
+					</div>
+					<div class="couponPersonDiv">
+						<label for="couponPerson1">发放对象：</label>
+						<input type="checkbox" name="couponPerson" class="inputText" id="couponPerson1" value="allCheck"/>
+						<label for="couponPerson1">全部</label>
+						<input type="checkbox" name="couponPerson" class="inputText" id="couponPerson2" value="newPerson"/>
+						<label for="couponPerson2">新用户</label>
+						<input type="checkbox" name="couponPerson" class="inputText" id="couponPerson3" value="oldPerson"/>
+						<label for="couponPerson3">老用户</label>
+						<br />
+						<input type="checkbox" name="couponPerson" class="inputText" id="couponPerson4" value="personLevel"/>
+						<label for="couponPerson4">玩家等级大于<input type="text" class="inputText" id="level"/>级以上的玩家</label>
+					</div>
+					<div class="remarksDiv">
+						<label for="remarks">备&nbsp;&nbsp;&nbsp;注：</label>
+						<input type="text" name="remarks" class="inputText" id="remarks" />
+					</div>
+				</div>
+				<div id="yesClose">
+					<div class="buttonBackColor_White button_White close mouseGesture">
+						取消
+					</div>
+					<div class="buttonBackColor_Blue button_Blue mouseGesture" id="yesGo">
+						生成二维码
+					</div>
+				</div>
+			</div> -->
+			<div id="logoAi" class="mouseGesture">
+				<img src="img/logo.png" id="logoIMG" />
+			</div>
+			<div id="topIMG">
+				<!-- <img src="img/bg_top.png" id="topPNG"> -->
+				<div id="headPortrait" class="mouseGesture">
+					<img src="img/ic_user.svg" />
+				</div>
+				<div id="userName" class="mouseGesture">
+					<p class="userFontStyle">朝阳大悦城</p>
+				</div>
+			</div>
+			<div id="leftMenu">
+				<ul id="menuUl">
+					<li class="menuLi mouseGesture ">
+						<div class="displayBar"></div>
+						<div class="menuAi">
+							<img src="img/门店管理.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">门店管理</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi">
+							<img src="img/会员管理.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">会员管理</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi1">
+							<img src="img/ic_date.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">店铺流水</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture ">
+						<div class="displayBar"></div>
+						<div class="menuAi1">
+							<img src="img/ic_date.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">游戏列表</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture menuLiStyle">
+						<div class="displayBar"></div>
+						<div class="menuAi1">
+							<img src="img/ic_date.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">优惠券配置</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="middleFunction">
+				<!-- <div></div> -->
+				<div id="searchShop">
+					<div id="titleTextGame">
+						优惠券配置
+					</div>
+					<div class="titleText textCenter" id="returnText">
+						<p>优惠券配置</p>
+					</div>
+				</div>
+				<!-- <div class="buttonBackColor_Blue button_Blue mouseGesture" id="addGame">
+					<div id="addShopIcon">
+						<img src="img/ic_add.svg" />
+					</div>
+					<p>新增游戏</p>
+				</div> -->
+	
+				<!--表开始-->
+				<div>
+				<!-- 	<p class="text1">新建优惠券</p>
+					<p class="text2 close mouseGesture">X</p> -->
+					<div id="addCoupon">
+						<div id="couponType">
+							<p>优惠券类型：</p>
+							<div id="all_deleteDiv">
+								<input type="radio" id="all_delete" name="couponType" value="1"/><label for="all_delete">满减券</label>
+							</div>
+							<div id="experienceDiv">
+								<input type="radio" id="experience" name="couponType" value="2"/><label for="experience">体验券</label>
+							</div>
+						</div>
+						<!-- <div class="couponTextDiv">
+							<label for="couponText">*优惠券内容：</label>
+							<input type="text" name="couponText" class="inputText" id="couponText" />
+						</div> -->
+						<div class="couponCanBeginTimeDiv">
+							<label for="couponCanBeginTime">*有效时间：</label>
+							<input type="text" name="couponCanBeginTime" class="inputText" id="couponCanBeginTime" />
+							<span>至</span>
+							<input type="text" name="couponCanEndTime" class="inputText" id="couponCanEndTime" />
+						</div>
+						<!-- <div class="couponGoBeginTimeDiv">
+							<label for="couponGoBeginTime">*发放时间：</label>
+							<input type="text" name="couponGoBeginTime" class="inputText" id="couponGoBeginTime" />
+							<span>至</span>
+							<input type="text" name="couponGoEndTime" class="inputText" id="couponGoEndTime" />
+						</div> -->
+						<div class="couponPersonDiv">
+							<label for="couponPerson1">发放对象：</label>
+							<!-- <input type="checkbox" name="couponPerson" class="inputText" id="couponPerson1" value="allCheck"/>
+							<label for="couponPerson1">全部</label>
+							<input type="checkbox" name="couponPerson" class="inputText" id="couponPerson2" value="newPerson"/>
+							<label for="couponPerson2">新用户</label>
+							<input type="checkbox" name="couponPerson" class="inputText" id="couponPerson3" value="oldPerson"/>
+							<label for="couponPerson3">老用户</label>
+							<br /> -->
+							<!-- <input type="checkbox" name="couponPerson" class="inputText" id="couponPerson4" value="personLevel"/> -->
+							<label for="couponPerson4">玩家等级大于<input type="text" class="inputText" id="level"/>级以上的玩家</label>
+						</div>
+						<!-- <div class="remarksDiv">
+							<label for="remarks">备&nbsp;&nbsp;&nbsp;注：</label>
+							<input type="text" name="remarks" class="inputText" id="remarks" />
+						</div> -->
+					</div>
+					<div id="yesClose">
+						<!-- <div class="buttonBackColor_White button_White close mouseGesture">
+							取消
+						</div> -->
+						<div class="buttonBackColor_Blue button_Blue mouseGesture" id="yesGo">
+							确定
+						</div>
+					</div>
+				</div>
+		</div>
+	</body>
+</html>

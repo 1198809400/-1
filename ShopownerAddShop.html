@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	<!-- 	<link rel="stylesheet" href="css/all.css" />
+		<link rel="stylesheet" href="css/addShop.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="skin/jedate.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/chengeIcon.js"></script>
+		<script type="text/javascript" src="js/jquery.nicescroll.js"></script>
+		<script type="text/javascript" src="js/address.js"></script>
+		<script type="text/javascript" src="js/inputCss.js"></script>
+		<script type="text/javascript" src="js/webHeightAdd.js"></script>
+		<script type="text/javascript" src="js/jumpPage.js"></script>
+		<script type="text/javascript" src="js/getData.js"></script>
+		<script type="text/javascript" src="js/addShop.js"></script>
+		<script type="text/javascript" src="js/popup.js"></script>
+		<script type="text/javascript" src="js/timePacker.js"></script>
+		<script type="text/javascript" src="js/jquerysession.js"></script>
+		<script type="text/javascript" src="js/loginDate.js"></script>
+
+		<script type="text/javascript" src="js/jedate.js"></script> -->
+		
+		
+		
+		<link rel="stylesheet" href="css/all.css" />
+		<link rel="stylesheet" href="css/addShop.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="skin/jedate.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/Unix.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/chengeIcon.js"></script>
+		<script type="text/javascript" src="js/jquery.nicescroll.js"></script>
+		<script type="text/javascript" src="js/address.js"></script>
+		<script type="text/javascript" src="js/inputCss.js"></script>
+		<script type="text/javascript" src="js/webHeightAdd.js"></script>
+		<script type="text/javascript" src="js/shopownerJumpPage.js"></script>
+		<script type="text/javascript" src="js/getData.js"></script>
+		<script type="text/javascript" src="js/changeTime.js"></script>
+		<script type="text/javascript" src="js/addShop.js"></script>
+		<script type="text/javascript" src="js/popup.js"></script>
+		<script type="text/javascript" src="js/timePacker.js"></script>
+		<script type="text/javascript" src="js/jquerysession.js"></script>
+		<script type="text/javascript" src="js/loginDate.js"></script>
+		<script type="text/javascript" src="js/initSelfShopData.js"></script>
+		<script type="text/javascript" src="js/jedate.js"></script>
+		<script type="text/javascript" src="js/user.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				loginData();
+				querySelfShopData();
+				console.log($.cookie("personShopId"));
+				queryPerson($.cookie("personShopId"));
+				jeDate("#openingHours", {
+					format: "hh:mm"
+				});
+				jeDate("#endHours", {
+					format: "hh:mm"
+				});
+				$(".back").click(function() {
+					var positionLeft = $(this).find(".button").position().left;
+					if (positionLeft <= 4) {
+						$(this).find(".button").animate({
+							left: "22px"
+						}, 200);
+						$(this).find(".ziSeBack").animate({
+							left: "0px"
+						}, 200);
+						$(this).find(".huiSeBack").animate({
+							left: "42px"
+						}, 200);
+					} else if (positionLeft >= 20) {
+						$(this).find(".button").animate({
+							left: "2px"
+						}, 200);
+						$(this).find(".ziSeBack").animate({
+							left: "-42px"
+						}, 200);
+						$(this).find(".huiSeBack").animate({
+							left: "0px"
+						}, 200);
+					}
+					// console.log();
+				});
+				$('#wraap1').niceScroll({
+					cursorcolor: "#ccc", //#CC0071 光标颜色
+					cursoropacitymax: 1, //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+					touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+					cursorwidth: "5px", //像素光标的宽度
+					cursorborder: "0", // 	游标边框css定义
+					cursorborderradius: "5px", //以像素为光标边界半径
+					autohidemode: true //是否隐藏滚动条
+				});
+				$('.cityDiv').niceScroll({
+					cursorcolor: "#ccc", //#CC0071 光标颜色
+					cursoropacitymax: 1, //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+					touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+					cursorwidth: "5px", //像素光标的宽度
+					cursorborder: "0", // 	游标边框css定义
+					cursorborderradius: "5px", //以像素为光标边界半径
+					autohidemode: true //是否隐藏滚动条
+				});
+				$("#searchAddress img").click(function(event) {
+					if ($("#gunDDiv").css("display") == 'block') {
+						$("#gunDDiv").height("0");
+						$("#gunDDiv").css("border", "0");
+						$("#gunDDiv").css("display", "none");
+						$(".cityDiv").css("display", "none");
+					} else if ($("#gunDDiv").css("display") == 'none') {
+						event.stopPropagation();
+						$("#gunDDiv").height("200");
+						$("#gunDDiv").css("border", "1px solid rgba(217,217,217,1)");
+						$("#gunDDiv").css("display", "block");
+					}
+				});
+				$("#searchAddress p").click(function(event) {
+					if ($("#gunDDiv").css("display") == 'block') {
+						$("#gunDDiv").height("0");
+						$("#gunDDiv").css("border", "0");
+						$("#gunDDiv").css("display", "none");
+						$(".cityDiv").css("display", "none");
+					} else if ($("#gunDDiv").css("display") == 'none') {
+						event.stopPropagation();
+						$("#gunDDiv").height("200");
+						$("#gunDDiv").css("border", "1px solid rgba(217,217,217,1)");
+						$("#gunDDiv").css("display", "block");
+					}
+				});
+				$("#wraap1 li").hover(function() {
+					$(this).css("background", "rgba(230,247,255,1)");
+				}, function() {
+					$(this).css("background", "rgba(255,255,255,1)");
+				});
+				$(document).on("mouseover", ".cityDiv p", function() {
+					$(this).css("background", "rgba(230,247,255,1)");
+				});
+				$(document).on("mouseout", ".cityDiv p", function() {
+					$(this).css("background", "rgba(255,255,255,1)");
+				});
+				$("#wraap1 li").hover(function() {
+					$(this).css("background", "rgba(230,247,255,1)");
+				}, function() {
+					$(this).css("background", "rgba(255,255,255,1)");
+				});
+
+				$(document).click(function() {
+					$("#gunDDiv").height("0");
+					$("#gunDDiv").css("border", "0");
+					$("#gunDDiv").css("display", "none");
+					$(".cityDiv").css("display", "none");
+				});
+				
+				$("#exclamation img").hover(function() {
+					$("#helpText").stop().fadeIn();
+					$("#square").stop().fadeIn();
+				}, function() {
+					$("#helpText").fadeOut();
+					$("#square").fadeOut();
+
+				});
+
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<!--主体-->
+		<div id="allContainer">
+			<!--弹窗-->
+			<div id="mask"></div>
+			<div id="popup">
+				<div class="searchPhoneNum">
+					<!-- pop_bg.png -->
+					<!-- admin_bg_new.png -->
+					<img src="img/admin_bg_new.png" class="titlePngSon" />
+					<img src="img/pop_bg.png" class="titlePng" />
+					<div class="close mouseGesture"></div>
+					<div class="text">
+						<p class="tips">（管理员需要先关注公众号补全手机信息成为会员）</p>
+						<p class="lable">手机号：</p>
+						<input type="text" id="phoneNo" class="inputText" />
+						<div id="searchButton" class="buttonBackColor_Blue button_Blue mouseGesture">查询</div>
+					</div>
+					<div id="headPic">
+						<div id="headPicIn">
+							<img src="img/ic_user.svg" />
+						</div>
+						<input type="checkbox" checked id="uName" name="uName" />
+						<label for="uName" id="uNameLabel">以轩</label>
+					</div>
+					<div class="buttonDiv">
+						<div class="buttonBackColor_White mouseGesture" id="dontDo">取 消</div>
+						<div class="buttonBackColor_Blue mouseGesture" id="yesAdd">确 定</div>
+					</div>
+				</div>
+				<div class="addPersonDate">
+					<img src="img/admin_bg_new.png" class="titlePngSon" />
+					<img src="img/pop_bg.png" class="titlePng" />
+					<div class="close mouseGesture"></div>
+					<div id="frame">
+						<label form="personName" class="labelFont Label1">*姓名：</label>
+						<input type="text" id="personName" class="inputText" name="personName" />
+						<label form="sex" class="labelFont Label2">*性别：</label>
+						<span id="sex" class="mouseGesture"><span>男</span>
+							<img src="img/Down.svg" />
+							<div id="sexSelect">
+								<ul>
+									<li>男</li>
+									<li>女</li>
+								</ul>
+							</div>
+						</span>
+						<label form="role" class="labelFont Label3">*角色：</label>
+						<span id="role" class="mouseGesture"><span>角色</span>
+							<img src="img/Down.svg" />
+							<div id="roleSelect">
+								<ul>
+									<li>店员</li>
+									<li>员工</li>
+								</ul>
+							</div>
+						</span><br />
+						<label form="adminUser" class="labelFont Label4">*管理员账号：</label>
+						<input type="text" id="adminUser" class="inputText" name="adminUser" />
+						<label form="adminPwd" class="labelFont Label5">*管理员密码：</label>
+						<input type="text" id="adminPwd" class="inputText" name="adminPwd" /><br />
+						<label form="jurisdiction" class="labelFont Label6">*权限：</label>
+						<span id="jurisdiction" class="mouseGesture">开</span>
+					</div>
+					<div class="addPersonDateButtonDiv">
+						<div class="buttonBackColor_White mouseGesture" id="no">取 消</div>
+						<div class="buttonBackColor_Blue mouseGesture" id="yes">确 定</div>
+					</div>
+				</div>
+			</div>
+			<div id="logoAi" class="mouseGesture">
+				<img src="img/logo.png" id="logoIMG" />
+			</div>
+			<div id="topIMG">
+				<!--
+                <img src="img/bg_top.png" id="topPNG">-->
+				<div id="headPortrait" class="mouseGesture">
+					<img src="img/ic_user.svg" />
+				</div>
+				<div id="userName" class="mouseGesture">
+					<p class="userFontStyle">朝阳大悦城</p>
+				</div>
+			</div>
+			<div id="leftMenu">
+				<ul id="menuUl">
+					<li class="menuLi mouseGesture menuLiStyle">
+						<div class="displayBar"></div>
+						<div class="menuAi">
+							<img src="img/门店管理.svg" />
+						</div>
+						<div class="menuText menuLiStyle">
+							<p class="menuFont">门店管理</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi">
+							<img src="img/会员管理.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">会员管理</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi1">
+							<img src="img/ic_date.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">店铺流水</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="middleFunctionSmall">
+				<div class="hint" id="phoneNumError">
+					<img src="img/Warning.svg" />
+					<p>手机号填写错误</p>
+				</div>
+				<div class="hint" id="postSuccess">
+					<img src="img/Success.svg" />
+					<p>创建成功</p>
+				</div>
+				<div class="hint" id="postError">
+					<img src="img/Error.svg" />
+					<p>提交失败</p>
+				</div>
+				<div class="hrefFunction">
+					<span id="index" class="mouseGesture">店铺首页</span>
+					<span>/</span>
+					<span>店铺基本信息</span>
+				</div>
+				<div id="shopDataDiv">
+					<div class="titleText textCenter" id="shopData">
+						<p>店铺基本信息</p>
+					</div>
+					<div class="buttonBackColor_Blue button_Blue mouseGesture" id="saveShop">
+						<div class="addShopIcon">
+							<img src="img/Save.svg" />
+						</div>
+						<p>保&nbsp;存</p>
+					</div>
+				</div>
+				<div class="searchInput" id="searchShopDiv">
+					<p class="shopNameFont">店铺名</p>
+					<input type="text" id="searchShopInput" class="inputText" placeholder="请输入店铺名称 如：北京1店" maxlength="20" />
+				</div>
+				<div class="searchInput" id="searchAddressDiv">
+					<p class="shopNameFont">店铺地址</p>
+					<div id="searchAddress">
+						<!-- <div id="downIcon"> -->
+						<img src="img/Down.svg" id="downIcon" class="mouseGesture" />
+						<!-- </div> -->
+						<p class="proText mouseGesture ">北京市</p>
+						<div id="gunDDiv">
+							<div>
+								<ul id="wraap1">
+									<li class="mouseGesture provinceDiv">北京</li>
+									<li class="mouseGesture provinceDiv">天津</li>
+									<li class="mouseGesture">上海</li>
+									<li class="mouseGesture">重庆</li>
+									<li class="mouseGesture">河北</li>
+									<li class="mouseGesture">山西</li>
+									<li class="mouseGesture">辽宁</li>
+									<li class="mouseGesture">吉林</li>
+									<li class="mouseGesture">黑龙江</li>
+									<li class="mouseGesture">江苏</li>
+									<li class="mouseGesture">浙江</li>
+									<li class="mouseGesture">安徽</li>
+									<li class="mouseGesture">福建</li>
+									<li class="mouseGesture">江西</li>
+									<li class="mouseGesture">山东</li>
+									<li class="mouseGesture">河南</li>
+									<li class="mouseGesture">湖北</li>
+									<li class="mouseGesture">湖南</li>
+									<li class="mouseGesture">广东</li>
+									<li class="mouseGesture">海南</li>
+									<li class="mouseGesture">四川</li>
+									<li class="mouseGesture">贵州</li>
+									<li class="mouseGesture">云南</li>
+									<li class="mouseGesture">陕西</li>
+									<li class="mouseGesture">甘肃</li>
+									<li class="mouseGesture">青海</li>
+									<li class="mouseGesture">台湾</li>
+									<li class="mouseGesture">内蒙古</li>
+									<li class="mouseGesture">广西</li>
+									<li class="mouseGesture">西藏</li>
+									<li class="mouseGesture">宁夏</li>
+									<li class="mouseGesture">新疆</li>
+									<li class="mouseGesture">香港</li>
+									<li class="mouseGesture">澳门</li>
+								</ul>
+							</div>
+						</div>
+						<div class="cityDiv">
+						</div>
+					</div>
+					<!-- <input type="text" id="searchAddress" class="inputText" placeholder="北京市" /> -->
+					<input type="text" id="detailedAddress" class="inputText" placeholder="详细门牌地址" />
+					<input type="text" id="longitude" class="inputText" placeholder="经度" oninput="value=value.replace(/[^\d]/g,'')" />
+					<span class="degree degree1">度</span>
+					<div id="exclamation">
+						<div id="helpText">
+							&nbsp;&nbsp;经纬度可以在高德地图输入店铺地址获得，用于店铺导航
+						</div>
+						<div id="square"></div>
+						<img src="img/help.svg" />
+					</div>
+					<input type="text" id="latitude" class="inputText" placeholder="纬度" oninput="value=value.replace(/[^\d]/g,'')" />
+					<span class="degree degree1">度</span>
+
+				</div>
+				<div class="searchInput" id="shopPhone">
+					<!-- <img src="img/Down.svg" id="downIcon1"/> -->
+					<p class="shopNameFont">店铺手机</p>
+					<input type="text" id="phoneNum" class="inputText" placeholder="请输入店铺手机联系方式" oninput="value=value.replace(/[^\d]/g,'')"
+					 maxlength="11" />
+				</div>
+				<div class="searchInput" id="landline">
+					<p class="shopNameFont">店铺座机</p>
+					<input type="text" id="landlineNum" class="inputText" placeholder="输入店铺座机联系方式" oninput="value=value.replace(/[^\d]/g,'')"
+					 maxlength="8" />
+				</div>
+				<div class="searchInput" id="openingHoursDiv">
+					<p class="shopNameFont">营业时间</p>
+					<!-- <img src="img/Time.svg" id="openingIcon" /> -->
+					<input type="text" id="openingHours" class="inputText" placeholder="8:00" />
+					<span class="degree degree1 to">至</span>
+					<!-- <img src="img/Time.svg" id="endingIcon" /> -->
+					<input type="text" id="endHours" class="inputText" placeholder="8:00" />
+				</div>
+			</div>
+			<div id="middleFunction">
+				<div class="titleText textCenter" id="personData">
+					<p>店铺人员信息</p>
+				</div>
+				<div class="buttonBackColor_Blue button_Blue mouseGesture" id="addPerson">
+					<div class="addShopIcon">
+						<img src="img/ic_add.svg" />
+					</div>
+					<p>新增店铺人员</p>
+				</div>
+				<div class="buttonBackColor_Blue button_Blue mouseGesture" id="savePerson">
+					<div class="addShopIcon">
+						<img src="img/Save.svg" />
+					</div>
+					<p>保&nbsp;存</p>
+				</div>
+				<!--表开始-->
+				<div id="tableDiv">
+					<table class="tableStyle">
+						<thead class="theadStyle">
+							<tr>
+								<th class="textCenter_table">编号</th>
+								<th>姓名</th>
+								<th>所属门店</th>
+								<th>手机号</th>
+								<th>用户名</th>
+								<th>省份</th>
+								<th>城市</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
+				<!--结束-->
+				<!-- <div class="titleText textCenter" id="shopEquipment">
+					<p>店铺设备信息</p>
+				</div>
+				<div class="buttonBackColor_Blue button_Blue mouseGesture" id="addEquipment">
+					<div class="addShopIcon">
+						<img src="img/ic_add.svg" />
+					</div>
+					<p>新增店铺设备</p>
+				</div>
+				<div class="buttonBackColor_White button_White mouseGesture textCenter" id="goIn">
+					<p>重 置</p>
+				</div>
+				<div class="buttonBackColor_White button_White mouseGesture textCenter" id="goOut">
+					<p>重 置</p>
+				</div>
+				<div class="buttonBackColor_Blue button_Blue mouseGesture" id="saveEquipment">
+					<div class="addShopIcon">
+						<img src="img/Save.svg" />
+					</div>
+					<p>保&nbsp;存</p>
+				</div>-->
+				<!--表开始-->
+				<!--<div id="tableDiv2">
+					<table class="tableStyle">
+						<thead class="theadStyle">
+							<tr>
+								<th class="textCenter_table">编号</th>
+								<th>IP</th>
+								<th>机器CPU号</th>
+								<th>机器MAC地址</th>
+								<th>所属店铺</th>
+								<th class="tableStyle_work">操作</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+					<div id="pageNumber">
+						
+					</div>
+				</div>-->
+				<!--结束--> 
+			</div>
+		</div>
+	</body>
+
+</html>

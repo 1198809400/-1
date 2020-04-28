@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- <link rel="stylesheet" href="css/all.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/game.css" />
+		<link rel="stylesheet" href="css/dateSelect.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/dateSelect.js"></script>
+		<script type="text/javascript" src="js/chengeIcon.js"></script>
+		<script type="text/javascript" src="js/jumpPage.js"></script>
+		<script type="text/javascript" src="js/webHeight.js"></script>
+		<script type="text/javascript" src="js/jquerysession.js"></script>
+		<script type="text/javascript" src="js/echarts.js"></script>
+		<script type="text/javascript" src="js/game.js"></script>
+		<script type="text/javascript" src="js/loginDate.js"></script> -->
+		
+		
+		<link rel="stylesheet" href="css/all.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/game.css" />
+		<link rel="stylesheet" href="css/dateSelect.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/Unix.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/dateSelect.js"></script>
+		<script type="text/javascript" src="js/chengeIcon.js"></script>
+		<script type="text/javascript" src="js/jumpPage.js"></script>
+		<script type="text/javascript" src="js/jquery.nicescroll.js"></script>
+		<script type="text/javascript" src="js/webHeight.js"></script>
+		<script type="text/javascript" src="js/jquerysession.js"></script>
+		<script type="text/javascript" src="js/echarts.js"></script>
+		<script type="text/javascript" src="js/game.js"></script>
+		<script type="text/javascript" src="js/loginDate.js"></script>
+		<script type="text/javascript" src="js/user.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				loginData();
+				$.cookie("page","game");
+				$("#beginTime").dateSelect();
+
+				$("#endTime").dateSelect();
+				$('.select').niceScroll({
+					cursorcolor: "#ccc", //#CC0071 光标颜色
+					cursoropacitymax: 1, //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+					touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+					cursorwidth: "5px", //像素光标的宽度
+					cursorborder: "0", // 	游标边框css定义
+					cursorborderradius: "5px", //以像素为光标边界半径
+					autohidemode: true //是否隐藏滚动条
+				});
+			});
+		</script>
+		<title></title>
+	</head>
+	<body>
+		<!--弹窗-->
+		<div id="mask"></div>
+		<div id="popup">
+			<p>x</p>
+		</div>
+		<!--主体-->
+		<div id="allContainer">
+			<div id="logoAi" class="mouseGesture">
+				<img src="img/logo.png" id="logoIMG" />
+			</div>
+			<div id="topIMG">
+				<!--
+		        <img src="img/bg_top.png" id="topPNG">-->
+				<div id="headPortrait" class="mouseGesture">
+					<img src="img/ic_user.svg" />
+				</div>
+				<div id="userName" class="mouseGesture">
+					<p class="userFontStyle">朝阳大悦城</p>
+				</div>
+			</div>
+			<div id="leftMenu">
+				<ul id="menuUl">
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi">
+							<img src="img/门店管理.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">门店管理</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi">
+							<img src="img/会员管理.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">会员管理</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture menuLiStyle">
+						<div class="displayBar"></div>
+						<div class="menuAi1">
+							<img src="img/ic_date.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">店铺流水</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi1">
+							<img src="img/ic_date.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">游戏列表</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi1">
+							<img src="img/ic_date.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">优惠券配置</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="middleFunction">
+				<!-- <div></div> -->
+				<div id="searchShop">
+					<p class="href mouseGesture">店铺流水统计</p>
+					<span id="xie">/</span>
+					<p class="href1 mouseGesture">游戏开启详情</p>
+					<div id="shopNameText">
+						<p class="shopNameFont">店铺名：</p>
+					</div>
+					<div id="searchShopInputDiv">
+						<div id="searchShopICON">
+						</div>
+						<input type="text" autocomplete="off" id="searchShopInput" class="inputText" placeholder="请输入店铺名称 如：北京1店" />
+						<div class="select mouseGesture">
+							<ul>
+								<li class="shopNameLi">1</li>
+								<li class="shopNameLi">1</li>
+								<li class="shopNameLi">1</li>
+								<li class="shopNameLi">1</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				<div class="changeData">
+					<ul class="seletion">
+						<li class="choose mouseGesture">今日</li>
+						<li class="mouseGesture">本周</li>
+						<li class="mouseGesture">本月</li>
+						<li class="mouseGesture">全年</li>
+					</ul>
+					<input id="beginTime" name="beginTime" class="inputText" />
+					<span>至</span>
+					<input id="endTime" name="endTime" class="inputText" />
+				</div>
+				<!-- <div id="yuan"></div> -->
+				<div class="box">
+					<div class="moneyAb">
+						￥90000
+					</div>
+					<!-- <div class="inBox"> -->
+					<div id="today" class="boxIn">
+						<p class="title">销售额类别占比</p>
+						<div id="main1">
+
+
+						</div>
+						<div class="data">
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">单次体验</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">不限次数</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">优惠券</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">店员开启</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="moneyAll">
+								<p>总销售额</p>
+								<p>￥300000</p>
+
+							</div>
+						</div>
+
+					</div>
+					<div id="week" class="boxIn">
+						<p class="title">销售额类别占比</p>
+						<div id="main2">
+
+						</div>
+						<div class="data">
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">单次体验</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">不限次数</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">优惠券</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">店员开启</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="moneyAll">
+								<p>总销售额</p>
+								<p>￥300000</p>
+
+							</div>
+						</div>
+					</div>
+					<div id="month" class="boxIn">
+						<p class="title">销售额类别占比</p>
+						<div id="main3">
+
+						</div>
+						<div class="data">
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">单次体验</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">不限次数</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">优惠券</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">店员开启</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="moneyAll">
+								<p>总销售额</p>
+								<p>￥300000</p>
+
+							</div>
+						</div>
+					</div>
+					<div id="year" class="boxIn">
+						<p class="title">销售额类别占比</p>
+						<div id="main4">
+
+						</div>
+						<div class="data">
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">单次体验</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">不限次数</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">优惠券</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="data1">
+								<div class="kuan"></div>
+								<p class="smallTitle">店员开启</p>
+								<span>|</span>
+								<p class="frequency">21次</p>
+								<span>|</span>
+								<p class="money">￥2392</p>
+							</div>
+							<div class="moneyAll">
+								<p>总销售额</p>
+								<p>￥300000</p>
+
+							</div>
+						</div>
+
+					</div>
+
+					<!-- </div> -->
+				</div>
+
+
+				<div class="clearfloat"></div>
+			</div>
+			<div class="underBox">
+				<p class="secondTitle">游戏开启次数</p>
+				<div id="bar"></div>
+				<div class="barOne"></div>
+				<div class="gameNumber">
+					<p class="ulTitle">门店热门游戏排行</p>
+					<ul>
+						<li>
+							<span class="No1 No">1</span>
+							<p class="gameName">求生之路</p>
+							<p class="openNumber"><span>1</span>台</p>
+						</li>
+						<li>
+							<span class="No2 No">2</span>
+							<p class="gameName">军团要塞</p>
+							<p class="openNumber"><span>2</span>台</p>
+						</li>
+						<li>
+							<span class="No3 No">3</span>
+							<p class="gameName">王者荣耀</p>
+							<p class="openNumber"><span>3</span>台</p>
+						</li>
+						<li>
+							<span class="noLast No">4</span>
+							<p class="gameName">反恐精英</p>
+							<p class="openNumber"><span>4</span>台</p>
+						</li>
+						<li>
+							<span class="noLast No">5</span>
+							<p class="gameName">迷宫夺宝</p>
+							<p class="openNumber"><span>5</span>台</p>
+						</li>
+						<li>
+							<span class="noLast No">6</span>
+							<p class="gameName">刺激战场</p>
+							<p class="openNumber"><span>6</span>台</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

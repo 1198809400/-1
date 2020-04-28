@@ -1,0 +1,208 @@
+.checkDay {
+	clear: both;
+	overflow: hidden;
+}
+
+.checkDay ul {
+	overflow: hidden;
+	margin-left: 16px;
+	text-align: center;
+}
+
+.checkDay li {
+	font-size: 16px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.65);
+	line-height: 40px;
+	float: left;
+	list-style: none;
+	width: 112px;
+	height: 40px;
+}
+.checkDay ul{
+	float: left;
+}
+#searchShop {
+	margin: 0;
+	width: 1136px;
+	height: 189px;
+}
+
+#shopNameText {
+	margin-left: 28px;
+	margin-bottom: 47px;
+}
+
+.href {
+	padding-top: 19px;
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.45);
+	margin-left: 28px;
+	float: left;
+}
+
+#xie {
+	padding-top: 19px;
+	float: left;
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.45);
+	margin-left: 10px;
+	margin-right: 8px;
+}
+
+.href1 {
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.65);
+	padding-top: 19px;
+	/* float: left; */
+}
+
+#shopNameText {
+	margin-top: 40px;
+}
+
+#searchShopInputDiv {
+	margin-top: 35px;
+	position: relative;
+}
+#searchShopInputDiv input{
+	/* margin-left: 20px; */
+	background: url(../img/Down.svg) no-repeat 250px;
+}
+.checkDay .hoverli {
+	border-bottom: 2px solid rgba(114, 92, 215, 1);
+	color: #725CD7;
+}
+
+#tableDiv th:nth-of-type(1) {
+	width: 28px;
+	padding-left: 16px;
+}
+
+#tableDiv th:nth-of-type(2) {
+	width: 56px;
+	padding-left: 41px;
+}
+
+#tableDiv th:nth-of-type(3) {
+	width: 45px;
+	padding-left: 58px;
+}
+
+#tableDiv th:nth-of-type(4) {
+	width: 56px;
+	padding-left: 72px;
+}
+
+#tableDiv th:nth-of-type(5) {
+	width: 28px;
+	padding-left: 50px;
+}
+#tableDiv th:nth-of-type(6) {
+	width:98px;
+	padding-left: 50px;
+}
+#tableDiv th:nth-of-type(7) {
+	width:99px;
+	padding-left: 11px;
+}
+#tableDiv th:nth-of-type(8) {
+	width:136px;
+	padding-left: 36px;
+}
+#tableDiv th:nth-of-type(9) {
+	padding-left: 50px;
+}
+#tableDiv td:nth-of-type(1) {
+	width: 28px;
+	padding-left: 16px;
+}
+
+#tableDiv td:nth-of-type(2) {
+	width: 56px;
+	padding-left: 41px;
+}
+
+#tableDiv td:nth-of-type(3) {
+	width: 45px;
+	padding-left: 58px;
+}
+
+#tableDiv td:nth-of-type(4) {
+	width: 56px;
+	padding-left: 72px;
+}
+
+#tableDiv td:nth-of-type(5) {
+	width: 28px;
+	padding-left: 50px;
+}
+#tableDiv td:nth-of-type(6) {
+	width:98px;
+	padding-left: 50px;
+}
+#tableDiv td:nth-of-type(7) {
+	width:99px;
+	padding-left: 11px;
+}
+#tableDiv td:nth-of-type(8) {
+	width:136px;
+	padding-left: 36px;
+}
+#tableDiv td:nth-of-type(9) {
+	padding-left: 50px;
+}
+.hoverli1{
+	border-bottom: 2px solid rgba(114, 92, 215, 1);
+	color: #725CD7;
+}
+#beginTime{
+	float: left;
+	width:130px;
+	height:32px;
+	margin-left: 333px;
+}
+#endTime{
+	width:130px;
+	height:32px;
+	float: left;
+}
+.checkDay span{
+	margin-left: 13px;
+	margin-right: 13px;
+	line-height:32px;
+	float: left;
+	font-size:12px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(79,89,111,1);
+}
+.menuAi1 img{
+	margin-top: 21px;
+	margin-left: 17px;
+}
+.select{
+	display: none;
+	position: absolute;
+	left: 1px;
+	top:34px;
+	width: 270px;
+	background-color: #fff;
+	border: 1px solid rgba(114, 92, 215, 0.3);
+	border-radius: 4px;
+	z-index: 10;
+	height: 280px;
+	overflow: hidden;
+}
+.select li{
+	padding-left: 12px;
+	height: 30px;
+	line-height: 30px;
+}

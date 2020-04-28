@@ -1,0 +1,192 @@
+#searchShop{
+	height: 97px;
+}
+#searchShop #returnText{
+	margin-left: 0px;
+	margin-top: 32px;
+	
+}
+#mask{
+	/* position: relative; */
+}
+#searchShop #returnText p{
+	font-size:16px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight: bolder;
+	color:rgba(0,0,0,0.85);
+}
+#searchShop #titleTextGame{
+	margin-top: 19px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.65);
+}
+#addGame {
+	width: 108px;
+	height: 32px;
+	margin-top: 21px;
+	margin-left: 32px;
+}
+#popup{
+	background: url(../img/680.png) no-repeat white;
+}
+.textDiv{
+	/* position: relative; */
+	
+}
+.textDiv .close{
+	/* position: absolute; */
+	z-index: 10;
+	font-size: 14px;
+	color: white;
+	float: left;
+	line-height: 56px;
+	margin-left: 533px;
+}
+ #popup #test{
+	display: inline-block;
+	margin-top: 56px;
+	margin-left: 33px;
+}
+#popup #gameName{
+	margin-top: 13px;
+	width:260px;
+	height:32px;
+}
+#popup label{
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.85);
+}
+#popup #upFlie{
+	padding-left: 34px;
+	line-height: 32px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.65);
+	margin-left: 10px;
+	/* position: absolute; */
+	display: inline-block;
+	width:72px;
+	height:32px;
+	background:rgba(255,255,255,1) url(../img/Group%20182.png) no-repeat 12px 9px;
+	border-radius:4px;
+	border:1px solid rgba(217,217,217,1);
+}
+#popup #gameMod{
+	padding-left: 12px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.25);
+	line-height: 32px;
+	/* position: absolute; */
+	display: inline-block;
+	width:248px;
+	height:32px;
+	margin-left: 5px;
+	background:rgba(255,255,255,1) url(../img/Down.svg) no-repeat 234px 12px;
+	border-radius:4px;
+	border:1px solid rgba(114,92,215,0.3);
+	position: relative;
+}
+
+#popup #gameModDiv1{
+	display: none;
+	width: 248px;
+	position: absolute;
+	left: -1px;
+	padding-left: 12px;
+	top: 34px;
+	border: 1px solid rgba(114,92,215,0.3);
+	border-radius: 4px;
+	background-color: #fff;
+	z-index: 10;
+}
+#popup #gameModDiv1 ul{
+	background-color: #fff;
+}
+#popup #gameModDiv1 li{
+	width: 248px;
+	list-style: none;
+	color: black;
+	background-color: #fff;
+}
+#popup #test p{
+	line-height: 32px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.85);
+	display: inline-block;
+}
+#popup #upFileDiv{
+	margin-top: 25px;
+	height:32px;
+}
+#popup #gameModDiv{
+	margin-top: 54px;
+	height:32px;
+}
+.titleText1{
+	float: left;
+	font-size:16px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(255,255,255,0.85);
+	line-height: 56px;
+	margin-left: 24px;
+}
+#upFileText{
+	margin-top: 8px;
+	margin-left: 80px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.45);
+}
+#tableDiv td:nth-of-type(5) img{
+	width:40px;
+	
+}
+#bottomButton{
+	border-top: 1px solid rgba(0,0,0,0.09);
+	position: absolute;
+	bottom: 0;
+	width: 680px;
+	height: 52px;
+	overflow: hidden;
+}
+#popup .buttonClose{
+	margin-top: 10px;
+	margin-left: 526px;
+	float: left;
+	width:65px;
+	height:32px;
+	line-height:32px ;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.65);
+	text-align: center;
+}
+#popup .buttonEnter{
+	margin-top: 11px;
+	margin-left: 8px;
+	float: left;
+	width:65px;
+	height:32px;
+	line-height:32px ;
+	text-align: center;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+}
+#tableDiv .tableStyle tbody td:nth-of-type(6) img{
+	width:180px;
+	height: 240px;
+}

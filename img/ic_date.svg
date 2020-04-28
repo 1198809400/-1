@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>ic_date</title>
+    <desc>Created with Sketch.</desc>
+    <g id="店铺流水" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="店铺流水-统计" transform="translate(-24.000000, -203.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-3">
+                <g id="编组-5" transform="translate(0.000000, 88.000000)">
+                    <g id="编组" transform="translate(24.000000, 55.000000)">
+                        <g id="ic_date" transform="translate(0.000000, 60.000000)">
+                            <path d="M7.875,0 L7.875,6.125 L14,6.125 C14,2.8 11.2,0 7.875,0 Z M8.75,0.875 C10.9375,1.35054348 12.7445652,3.0625 13.125,5.25 L8.75,5.25 L8.75,0.875 Z" id="形状"></path>
+                            <path d="M7,0 L7,7 L14,7 C14,10.85 10.85,14 7,14 C3.15,14 0,10.85 0,7 C0,3.23020833 3.02011719,0.131553819 6.76030861,0.004079409 L7,0 Z M6,1.084 L5.9019373,1.101594 C3.12302433,1.62184455 1,4.07702512 1,7 C1,10.2977153 3.70228475,13 7,13 C9.92297488,13 12.3781554,10.8769757 12.898406,8.0980627 L12.914,8 L6,8 L6,1.084 Z" id="路径"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

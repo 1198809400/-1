@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- <link /> -->
+		<link rel="stylesheet" href="css/all.css" />
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			.loginDiv {
+				padding-top: 100px;
+				margin: 0 auto;
+				width: 368px;
+				text-align: center;
+				overflow: hidden;
+			}
+
+			.loginFont {
+				font-size: 26px;
+				font-family: PingFangSC-Medium, PingFang SC;
+				font-weight: 500;
+				color: rgba(255, 255, 255, 1);
+				line-height: 24px;
+			}
+			.inputText{
+				width:354px;
+				height:40px;
+				background:rgba(255,255,255,1);
+				border-radius:4px;
+				border:1px solid rgba(217,217,217,1);
+			}
+			.inputText::-webkit-input-placeholder{
+				font-size:16px;
+			}
+			.buttonBackColor_Blue {
+				width:368px;
+				height:40px;
+				font-size:16px;
+				font-family:PingFangSC-Regular,PingFang SC;
+				font-weight:400;
+				color:rgba(255,255,255,1);
+				line-height: 40px;
+				text-align: center;
+			}
+			.floatLeft{
+				float: left;
+			}
+			.floatRight{
+				float: right;
+			}
+			#fogetPass{
+				padding-top: 1px;
+				font-size:14px;
+				font-family:PingFangSC-Regular,PingFang SC;
+				font-weight:400;
+				color:rgba(255,255,255,1);
+				width:56px;
+				height:22px;
+				line-height: 22px;
+			}
+			label{
+				color:rgba(255,255,255,1);
+				font-size:14px;
+				font-family:PingFangSC-Regular,PingFang SC;
+				font-weight:400;
+			}
+			.checkInput{
+				margin-top: 5px;
+				width:16px;
+				height:16px;
+				background:rgba(255,255,255,1);
+				border-radius:2px;
+				border:1px solid rgba(217,217,217,1);
+			}
+			.imgstyle{
+				margin-bottom: 26px;
+			}
+			input[name="userName"]{
+				margin-top: 45px;
+			}
+			input[name="password"]{
+				margin-top:24px;
+			}
+			.forget{
+				overflow: hidden;
+				margin-top: 24px;
+				margin-bottom: 24px;
+			}
+			/* width:56px;
+			height:22px;
+			font-size:14px;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			line-height:22px; */
+		</style>
+		<!-- <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/jquerysession.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/login.js"></script> -->
+		
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/jquerysession.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var width = window.screen.width;
+				var height = window.screen.height;
+				var docHeight = $(document).height();
+				console.log(docHeight);
+				console.log(width);
+				console.log(height);
+				$("body").height(docHeight);
+				$("body").css("background-image", "url(img/login_bg@3x.png)");
+				$("body").css("background-position", "-1px 0px");
+				$("body").css("background-size", "cover");
+				// background-size: cover;
+
+				$(document).resize(function() {
+					console.log("1");
+					// $('span').text(x+=1);
+					var width = window.screen.width;
+					var height = window.screen.height;
+					var docHeight = $(document).height();
+					console.log(docHeight + "resize");
+					console.log(width);
+					console.log(height);
+					$("body").height(docHeight);
+					$("body").css("background-image", "url(img/login_bg@3x.png)");
+					$("body").css("background-size", "cover");
+					$("body").css("background-position", "-1px 0px");
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div class="loginDiv">
+			<img src="img/logo.png" class="imgstyle"/>
+			<p class="loginFont">未来战场后台管理系统</p>
+			<input type="text" name="userName" class="inputText" placeholder="账号"/>
+			<input type="password" name="password" class="inputText" placeholder="密码"/>
+			<div class="forget">
+				<div class="floatLeft">
+					<input class="checkInput floatLeft" type="checkbox" name="isAutoLogin" id="AutoLogin"/> <label for="AutoLogin">自动登录</label>
+				</div>
+				<div class="floatRight">
+					<p id="fogetPass" class="mouseGesture">忘记密码</p>
+				</div>
+			</div>
+			<div class="clearfloat buttonBackColor_Blue mouseGesture loginButton">登&nbsp;&nbsp;录</div>
+		</div>
+	</body>
+</html>

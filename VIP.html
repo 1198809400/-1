@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!-- <link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/all.css" />
+		<link rel="stylesheet" href="css/VIPTable.css"/>
+		<link rel="stylesheet" href="css/page_common.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/chengeIcon.js"></script>
+		<script type="text/javascript" src="js/page_common.js"></script>
+		<script type="text/javascript" src="js/InitVIPGetData.js"></script>
+		<script type="text/javascript" src="js/changeVIPPage.js"></script>
+		<script type="text/javascript" src="js/jumpPage.js"></script>
+		<script type="text/javascript" src="js/webHeight.js"></script>
+		<script type="text/javascript" src="js/jquerysession.js"></script>
+		<script type="text/javascript" src="js/loginDate.js"></script> -->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/all.css" />
+		<link rel="stylesheet" href="css/VIPTable.css"/>
+		<link rel="stylesheet" href="css/page_common.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/Unix.js"></script>
+		<script type="text/javascript" src="js/chengeIcon.js"></script>
+		<script type="text/javascript" src="js/page_common.js"></script>
+		<script type="text/javascript" src="js/InitVIPGetData.js"></script>
+		<script type="text/javascript" src="js/changeVIPPage.js"></script>
+		<script type="text/javascript" src="js/jumpPage.js"></script>
+		<script type="text/javascript" src="js/webHeight.js"></script>
+		<script type="text/javascript" src="js/jquerysession.js"></script>
+		<script type="text/javascript" src="js/loginDate.js"></script>
+		<script type="text/javascript" src="js/user.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				loginData();
+				$(document).on("mouseover",".editShop",function(){
+					$(this).find("img").attr("src", "img/map _edit_click.svg");
+				});
+				$(document).on("mouseout",".editShop",function(){
+					$(this).find("img").attr("src", "img/map _edit备份.svg");
+				});
+				$(document).on("mouseover",".deleteShop",function(){
+					$(this).find("img").attr("src", "img/Combined Shape.svg");
+				});
+				$(document).on("mouseout",".deleteShop",function(){
+					$(this).find("img").attr("src", "img/3rd_trash_b备份 3.svg");
+				});
+				
+				$(document).on("mouseover",".tableStyle tbody tr",function(){
+					$(this).css("background", "rgba(235,241,255,1)");
+				});
+				$(document).on("mouseout",".tableStyle tbody tr",function(){
+					$(this).css("background", "rgba(255,255,255,1)");
+				});
+				$(document).on("mouseover","#pageNumber li",function(){
+					$(this).addClass("currentPage");
+				});
+				$(document).on("mouseout","#pageNumber li",function(){
+					// console.log($("#pageNumber li").index(this));
+					var thisIndex = $("#pageNumber li").index(this);
+					var pageNum = parseInt($("#pageNum").val());
+					if(thisIndex == pageNum){
+						return;
+					}
+					$(this).removeClass("currentPage");
+				});
+			})
+			
+		</script>
+	</head>
+
+	<body>
+		<!--弹窗--> 
+		<div id="mask"></div>
+		<div id="popup">
+			<p>x</p>
+		</div>
+		<!--主体-->
+		<div id="allContainer">
+			<div id="logoAi" class="mouseGesture">
+				<img src="img/logo.png" id="logoIMG" />
+			</div>
+			<div id="topIMG">
+				<!--
+                <img src="img/bg_top.png" id="topPNG">-->
+				<div id="headPortrait"  class="mouseGesture">
+					<img src="img/ic_user.svg" />
+				</div>
+				<div id="userName" class="mouseGesture">
+					<p class="userFontStyle">朝阳大悦城</p>
+				</div>
+			</div>
+			<div id="leftMenu">
+				<ul id="menuUl">
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi">
+							<img src="img/门店管理.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">门店管理</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture  menuLiStyle">
+						<div class="displayBar"></div>
+						<div class="menuAi">
+							<img src="img/会员管理.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">会员管理</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi1">
+							<img src="img/ic_date.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">店铺流水</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi1">
+							<img src="img/ic_date.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">游戏列表</p>
+						</div>
+					</li>
+					<li class="menuLi mouseGesture">
+						<div class="displayBar"></div>
+						<div class="menuAi1">
+							<img src="img/ic_date.svg" />
+						</div>
+						<div class="menuText">
+							<p class="menuFont">优惠券配置</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="middleFunction">
+				<!-- <div></div> -->
+				<div id="searchShop">
+					<div id="shopNameText">
+						<p class="shopNameFont">手机号：</p>
+					</div>
+					<div id="searchShopInputDiv">
+						<div id="searchShopICON">
+							<img src="img/ic_search.svg" />
+						</div>
+						<input type="text" id="searchShopInput" class="inputText" placeholder="请输入所查询会员的手机号" />
+					</div>
+					<div class="buttonBackColor_Blue button_Blue mouseGesture textCenter" id="searchButton">
+						<p>查 询</p>
+					</div>
+					<div class="buttonBackColor_White button_White mouseGesture textCenter" id="restButton">
+						<p>重 置</p>
+					</div>
+				</div>
+				<div class="buttonBackColor_Blue button_Blue mouseGesture" id="addShop" style="display: none;">
+					<div id="addShopIcon">
+						<img src="img/ic_add.svg" />
+					</div>
+					<p>新建会员</p>
+				</div>
+				<div class="titleText textCenter" id="returnText">
+					<p>会员信息</p>
+				</div>
+				<!--表开始-->
+				<div id="tableDiv">
+					<table class="tableStyle">
+						<thead class="theadStyle">
+							<tr>
+								<th>编号</th>
+								<th>姓名</th>
+								<th>手机号</th>
+								<th>会员等级</th>
+								<th>unionID</th>
+								<th>昵称</th>
+								<!-- <th>头像</th> -->
+								<th>省份</th>
+								<th>城市</th>
+								
+								<th>国家</th>
+								<th>用户关注时间</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
+				<!--结束-->
+				<!--数据 页码  开始-->
+				<div class="dataText">
+					<p>显示第<span class="first">0</span>到第<span class="end">10</span>条记录，总共<span class="allNumber">200</span>条记录</p>
+				</div>
+				<div class="pageShowNumDC" id="topPageNum">
+					<span>跳至</span>
+					<div class="mouseGesture pageShowNum currentPageChange" id="jumpPage">5</div>
+					<span>页</span>
+				</div>
+				<div id="pageShowNumD" class="pageShowNumDC">
+					<div class="mouseGesture currentPageChange">10条/页</div>
+				</div>			
+				
+				<div id="pageNumber">
+					
+				</div>
+				<!--结束-->
+			</div>
+		</div>
+	</body>
+
+</html>

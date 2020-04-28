@@ -1,0 +1,1115 @@
+#addPerson {
+	margin-left: 32px;
+	margin-bottom: 10px;
+	width: 142px;
+	height: 32px;
+	background: rgba(114, 92, 215, 1);
+	/* line-height: 32px; */
+	float: left;
+}
+
+#personData {
+	margin-left: 32px;
+	margin-top: 33px;
+	margin-bottom: 16px;
+	width: 96px;
+	height: 24px;
+}
+
+#middleFunctionSmall {
+	width: 1136px;
+	height: 340px;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 2px;
+	float: left;
+	margin-top: 24px;
+	margin-left: 24px;
+	position: relative;
+}
+
+#savePerson {
+	width: 85px;
+	height: 32px;
+	float: left;
+	margin-left: 798px;
+	margin-bottom: 16px;
+}
+
+.hrefFunction {
+	margin-top: 18px;
+	margin-left: 28px;
+}
+
+.hrefFunction span:nth-of-type(1) {
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.45);
+	line-height: 22px;
+}
+
+.hrefFunction span:nth-of-type(2) {
+	margin-left: 8px;
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.45);
+	line-height: 22px;
+}
+
+.hrefFunction span:nth-of-type(3) {
+	margin-left: 8px;
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.65);
+	line-height: 22px;
+}
+
+#searchShopInput {
+	margin-top: 8px;
+	width: 282px;
+	height: 32px;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 4px;
+	border: 1px solid rgba(114, 92, 215, 0.29);
+}
+
+.searchInput {
+	float: left;
+}
+
+.searchInput2 {
+	clear: both;
+}
+
+#searchShopDiv {
+	margin-left: 32px;
+	margin-top: 24px;
+	/* clear: both; */
+}
+
+#shopData {
+	float: left;
+	width: 96px;
+	height: 24px;
+	line-height: 32px;
+	/*margin-top: 32px; 
+	margin-left: 28px; */
+}
+
+#saveShop {
+	float: left;
+	margin-left: 848px;
+	width: 85px;
+	height: 32px;
+	/* margin-top: 32px; */
+}
+
+#shopDataDiv {
+	padding-left: 28px;
+	margin-top: 32px;
+	height: 32px;
+	width: 1108px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid rgba(233, 233, 233, 1);
+	/* border: 1px solid red; */
+}
+
+#searchAddress {
+	width: 119px;
+	height: 32px;
+	background: rgba(255, 255, 255, 0);
+	border-radius: 4px;
+	border: 1px solid rgba(114, 92, 215, 0.3);
+	margin-top: 8px;
+	float: left;
+	position: relative;
+	z-index: 2;
+	/* position: absolute; */
+}
+
+#searchAddress ul {
+	overflow: hidden;
+	height: 200px;
+	/* position: relative; */
+	/* border-radius:4px; */
+	/* border:1px solid rgba(217,217,217,1); */
+	background: rgba(255, 255, 255, 1);
+
+}
+
+#searchAddress li {
+	/* z-index: 10; */
+	list-style: none;
+	width: 107px;
+	height: 32px;
+	padding-left: 12px;
+	line-height: 32px;
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.65);
+	/* line-height:22px; */
+}
+
+#searchAddress .proText {
+	line-height: 32px;
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.25);
+	padding-left: 12px;
+	/* z-index: 2; */
+	/* line-height:22px; */
+}
+
+#searchAddressDiv {
+	margin-top: 24px;
+	margin-left: 71px;
+}
+
+#detailedAddress {
+	width: 309px;
+	height: 32px;
+	margin-left: 24px;
+	margin-top: 8px;
+	float: left;
+}
+
+#wraap1 {
+	overflow: hidden;
+	/* display: none; */
+}
+
+#gunDDiv {
+	position: absolute;
+	overflow: hidden;
+	width: 119px;
+	height: 200px;
+	border-radius: 4px;
+	border: 1px solid rgba(217, 217, 217, 1);
+	background: rgba(255, 255, 255, 1);
+	display: none;
+}
+
+#middleFunction {
+	/* position: absolute; */
+	/* left: 256px; */
+	/* top: 433px; */
+	z-index: -1;
+	overflow: hidden;
+	height: 100%;
+}
+
+.provinceDiv {
+	position: relative;
+}
+
+.cityDiv {
+	position: absolute;
+	left: 120px;
+	top: 64px;
+	width: 119px;
+	height: 50px;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 4px;
+	border: 1px solid rgba(217, 217, 217, 1);
+	display: none;
+}
+
+.cityDiv p {
+	padding-left: 12px;
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.65);
+	line-height: 32px;
+}
+
+#longitude {
+	width: 44px;
+	height: 32px;
+	margin-left: 24px;
+	float: left;
+	margin-top: 8px;
+}
+
+.degree {
+	/* float: left; */
+	/* width:12px;
+	height:17px; */
+	font-size: 12px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(79, 89, 111, 1);
+	margin-top: 17px;
+	margin-left: 6px;
+	/* line-height:17px; */
+}
+
+.degree1 {
+	float: left;
+}
+
+#exclamation {
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin-top: 16px;
+	margin-left: 3px;
+	position: relative;
+	/* background:rgba(114,92,215,1); */
+}
+
+#latitude {
+	width: 44px;
+	height: 32px;
+	margin-left: 7px;
+	float: left;
+	margin-top: 8px;
+}
+
+#phoneNum {
+	width: 282px;
+	height: 32px;
+	margin-top: 8px;
+}
+
+#shopPhone {
+	margin-top: 32px;
+	margin-left: 32px;
+	position: relative;
+}
+
+#landline {
+	margin-left: 71px;
+	margin-top: 32px;
+}
+
+#landlineNum {
+	margin-top: 8px;
+	width: 282px;
+	height: 32px;
+}
+
+#openingHours {
+	margin-top: 8px;
+	width: 118px;
+	height: 32px;
+	float: left;
+}
+
+#openingHoursDiv {
+	margin-top: 32px;
+	margin-left: 70px;
+	position: relative;
+}
+
+#endHours {
+	margin-top: 8px;
+	width: 118px;
+	height: 32px;
+}
+
+.to {
+	margin-left: 13px;
+	margin-right: 13px;
+	margin-top: 15px;
+}
+
+#downIcon {
+	position: absolute;
+	right: 12px;
+	top: 9px;
+	width: 14px;
+	height: 14px;
+	z-index:1;
+}
+
+#downIcon1 {
+	position: absolute;
+	right: 12px;
+	top: 40px;
+	width: 14px;
+	height: 14px;
+}
+
+#openingIcon {
+	position: absolute;
+	right: 180px;
+	top: 40px;
+}
+
+#endingIcon {
+	position: absolute;
+	right: 12px;
+	top: 40px;
+}
+
+#helpText {
+	display: none;
+	position: absolute;
+	left: -100px;
+	top: -70px;
+	width: 193px;
+	height: 50px;
+	/* line-height: 55px; */
+	background: rgba(0, 0, 0, 0.75);
+	border-radius: 4px;
+	box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+	padding-left: 8px;
+	padding-top: 10px;
+	padding-right: 13px;
+	/* line-height:22px; */
+}
+
+#square {
+	display: none;
+	z-index: 1;
+	position: absolute;
+	top: -10px;
+	left: 3px;
+	width: 0;
+	height: 0;
+	border-top: 4px solid rgba(0, 0, 0, 0.75);
+	border-bottom: 4px solid white;
+	border-left: 4px solid white;
+	border-right: 4px solid white;
+}
+
+.textCenter_table {
+	width: 60px;
+}
+
+.table_name {
+	width: 70px;
+	padding-left: 10px;
+}
+
+#tableDiv tbody tr td:nth-of-type(2) {
+	padding-left: 10px;
+}
+
+#tableDiv thead tr th:nth-of-type(3) {
+	padding-left: 10px;
+}
+
+#tableDiv tbody tr td:nth-of-type(3) {
+	padding-left: 10px;
+}
+
+#tableDiv thead tr th:nth-of-type(4) {
+	padding-left: 25px;
+	width: 180px;
+}
+
+#tableDiv tbody tr td:nth-of-type(4) {
+	padding-left: 25px;
+	width: 180px;
+}
+
+#tableDiv thead tr th:nth-of-type(5) {
+	width: 118px;
+}
+
+#tableDiv tbody tr td:nth-of-type(5) {
+	width: 118px;
+}
+
+#tableDiv thead tr th:nth-of-type(6) {
+	width: 128px;
+}
+
+#tableDiv tbody tr td:nth-of-type(6) {
+	width: 128px;
+}
+
+#tableDiv thead tr th:nth-of-type(7) {
+	width: 100px;
+}
+
+#tableDiv tbody tr td:nth-of-type(7) {
+	width: 100px;
+}
+
+#tableDiv thead tr th:nth-of-type(8) {
+	width: 111px;
+}
+
+#tableDiv tbody tr td:nth-of-type(8) {
+	width: 111px;
+}
+
+#tableDiv thead tr th:nth-of-type(9) {
+	width: 90px;
+}
+
+#tableDiv tbody tr td:nth-of-type(9) {
+	width: 90px;
+}
+#tableDiv tbody tr:last-child td{
+	border-bottom: 1px solid rgba(191,191,191,1);
+}
+.back {
+	width: 42px;
+	height: 22px;
+	border-radius: 11px;
+	/* background:rgba(191,191,191,1); */
+	position: relative;
+	overflow: hidden;
+}
+
+.button {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 18px;
+	height: 18px;
+	border-radius: 9px;
+	background: rgba(255, 255, 255, 1);
+	z-index: 8;
+}
+
+.ziSeBack {
+	position: absolute;
+	z-index: 7;
+	height: 22px;
+	width: 42px;
+	left: -42px;
+	top: 0;
+	background: rgba(113, 93, 214, 1);
+	/* border: 1px solid red; */
+}
+
+.huiSeBack {
+	position: absolute;
+	z-index: 7;
+	height: 22px;
+	width: 42px;
+	left: 0;
+	top: 0;
+	background: rgba(191, 191, 191, 1);
+	/* border: 1px solid red; */
+}
+
+.yes {
+	position: absolute;
+	z-index: 8;
+	left: 8px;
+	/* top: -3px; */
+}
+
+.no {
+	position: absolute;
+	z-index: 8;
+	right: 8px;
+	/* top: -2px; */
+}
+
+.no img {
+	width: 8px;
+	height: 8px;
+}
+.hint{
+	position: absolute;
+	/* width:154px; */
+	height:40px;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 4px 12px 0px rgba(0,0,0,0.15);
+	border-radius:4px;
+	left: 500px;
+	top: 300px;
+	display: none;
+}
+.hint img{
+	margin-top: 12px;
+	margin-left: 16px;
+	float: left;
+	/* padding-top: 5px; */
+}
+.hint p{
+	float: left;
+	margin-left: 8px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.65);
+	line-height:40px;
+}
+#phoneNumError{
+	width:154px;
+}
+#postSuccess{
+	width:106px;
+}
+#postError{
+	width:106px;
+}
+#shopEquipment{
+	margin-top: 40px;
+	margin-left: 32px;
+	width:96px;
+	height:24px;
+}
+#addEquipment{
+	margin-left: 32px;
+	margin-top: 16px;
+	float: left;
+	width:142px;
+	height:32px;
+	margin-bottom: 10px;
+}
+#goIn{
+	margin-bottom: 16px;
+	margin-top: 16px;
+	margin-left: 24px;
+	float: left;
+	width:62px;
+	height:32px;
+	/* background:rgba(255,255,255,1);
+	border:1px solid rgba(217,217,217,1); */
+}
+#goOut{
+	margin-top: 16px;
+	margin-left: 24px;
+	float: left;
+	width:62px;
+	height:32px;
+}
+#saveEquipment{
+	margin-right: 79px;
+	margin-top: 16px;
+	float: right;
+	width:85px;
+	height:32px;
+}
+#tableDiv2 table thead tr th:nth-of-type(2){
+	width: 125px;
+	padding-left: 25px;
+	
+}
+#tableDiv2 table tbody tr td:nth-of-type(2){
+	width: 120px;
+	padding-left: 25px;
+	padding-right: 23px;
+}
+#tableDiv2 table thead tr th:nth-of-type(3){
+	width: 125px;
+	padding-right: 38px;
+	
+}
+#tableDiv2 table tbody tr td:nth-of-type(3){
+	width: 125px;
+	padding-right: 38px;
+}
+#tableDiv2 table thead tr th:nth-of-type(4){
+	width: 125px;
+	padding-right: 38px;
+	
+}
+#tableDiv2 table tbody tr td:nth-of-type(4){
+	width: 125px;
+	padding-right: 38px;
+}
+#tableDiv2 table thead tr th:nth-of-type(5){
+	width: 100px;
+	padding-right: 45px;
+	
+}
+#tableDiv2 table tbody tr td:nth-of-type(5){
+	width: 100px;
+	padding-right: 45px;
+}
+#tableDiv2 table thead tr th:nth-of-type(6){
+	width: 82px;
+	padding-right: 57px;
+	
+}
+#tableDiv2 table tbody tr td:nth-of-type(6){
+	width: 82px;
+	padding-right: 57px;
+}
+#tableDiv2 table thead tr th:nth-of-type(7){
+	width: 45px;
+	padding-right: 114px;
+	
+}
+#tableDiv2 table tbody tr td:nth-of-type(7){
+	width: 45px;
+	padding-right: 114px;
+}
+#tableDiv2 table tbody tr td:nth-of-type(7) a{
+	text-decoration: none;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(114,92,215,1);
+}
+#openingHours{
+	background: url(../img/Time.svg) no-repeat 104px 9px;
+}
+#endHours{
+	background: url(../img/Time.svg) no-repeat 104px 9px;
+}
+.searchPhoneNum{
+	position: relative;
+	
+}
+.searchPhoneNum .adminText{
+	position: absolute;
+	left: 24px;
+	top: 16px;
+	font-size:16px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(255,255,255,0.85);
+}
+.searchPhoneNum .adminText1{
+	position: absolute;
+	left: 448px;
+	top: 16px;
+	font-size:16px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(255,255,255,0.85);
+}
+.searchPhoneNum .titlePng{
+	width:483px;
+	height:53px;
+}
+.searchPhoneNum .titlePngSon{
+	position: absolute;
+	left: 171px;
+	top: -78px;
+	width:142px;
+	height:129px;
+}
+.close{
+	/* border: 1px solid red; */
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 451px;
+	top: 16px;
+}
+.searchPhoneNum .text{
+	overflow: hidden;
+}
+.searchPhoneNum .text .tips{
+	margin-left: 15px;
+	margin-top: 21px;
+	font-size:14px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:500;
+	color:rgba(107,107,107,1);
+}
+.searchPhoneNum .text .lable{
+	margin-left: 23px;
+	margin-top: 22px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.85);
+	float: left;
+}
+.searchPhoneNum .text #phoneNo{
+	margin-top: 17px;
+	width:272px;
+	height:32px;
+	float: left;
+}
+.searchPhoneNum .text #searchButton{
+	margin-top: 18px;
+	margin-left: 30px;
+	text-align: center;
+	float: left;
+	width:65px;
+	height:32px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+	line-height:32px;
+}
+#headPic{
+	margin-top: 22px;
+	text-align: center;
+	float: left;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgba(0,0,0,0.09);
+	
+}
+#headPic #headPicIn{
+	visibility: hidden;
+	width:61px;
+	height:61px;
+	background:rgba(166,219,255,1);
+	border:3px solid rgba(227,221,255,1);
+	margin: 0 auto;
+	border-radius: 31px;
+}
+#headPic img{
+	width:61px;
+	height:61px;
+}
+#headPic label{
+	visibility: hidden;
+	margin-top: 9px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.65);
+}
+#headPic input{
+	visibility: hidden;
+	margin-top: 12px;
+}
+.searchPhoneNum .buttonDiv{
+	width: 100%;
+	height: 100%;
+}
+.searchPhoneNum .buttonDiv #dontDo{
+	margin-left: 329px;
+	float: left;
+	line-height: 32px;
+	text-align: center;
+	width:65px;
+	height:32px;
+	margin-top: 12px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.65);
+}
+.searchPhoneNum .buttonDiv #yesAdd{
+	margin-left: 8px;
+	float: left;
+	line-height: 32px;
+	text-align: center;
+	width:65px;
+	height:32px;
+	margin-top: 13px;
+	
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+}
+.addPersonDate{
+	position: relative;
+	display: none;
+}
+.addPersonDate .titlePng{
+	width:680px;
+	height:53px;
+}
+.addPersonDate .titlePngSon{
+	position: absolute;
+	left: 171px;
+	top: -78px;
+	width:142px;
+	height:129px;
+}
+.searchPhoneNum .close{
+	/* border: 1px solid red; */
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 451px;
+	top: 16px;
+}
+.addPersonDate .close{
+	/* border: 1px solid red; */
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 639px;
+	top: 16px;
+}
+#frame #personName{
+	/* margin-left: 35px; */
+	margin-top: 35px;
+	width:99px;
+	height:32px;
+}
+.labelFont{
+	
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.85);
+}
+#frame #sex{
+	position: relative;
+	/* display: inline; */
+	background:rgba(255,255,255,1);
+	border-radius:4px;
+	border:1px solid rgba(114,92,215,0.3);
+	padding-left: 12px;
+	padding-top: 6px;
+	padding-bottom: 6px; 
+	padding-right: 31px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.25);
+}
+#frame #sex #sexSelect ul{
+	border-radius: 4px;
+	border: 1px solid rgba(114,92,215,0.3);
+}
+#frame #sex #sexSelect li{
+	padding-left: 12px;
+	width:47px;
+	height:32px;
+	/* border: 1px solid red; */
+	color: #000;
+	list-style: none;
+	line-height: 32px;
+	background-color: #fff;
+}
+#frame #sex img{
+	position: absolute;
+	left: 40px;
+	top: 12px;
+}
+#frame #sex #sexSelect{
+	position: absolute;
+	left: 0px;
+	top:32px;
+}
+#frame #role{
+	position: relative;
+	/* display: inline; */
+	background:rgba(255,255,255,1);
+	border-radius:4px;
+	border:1px solid rgba(114,92,215,0.3);
+	padding-left: 12px;
+	padding-top: 6px;
+	padding-bottom: 6px; 
+	padding-right: 80px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.25);
+	margin-top: 35px;
+	width:93px;
+	height:32px;
+}
+#frame #role #roleSelect ul{
+	border-radius: 4px;
+	border: 1px solid rgba(114,92,215,0.3);
+}
+#frame #role #roleSelect{
+	position: absolute;
+	left: 0px;
+	top:32px;
+	border: 1px solid rgba(114,92,215,0.3);
+	border-radius: 4px;
+}
+#frame #role img{
+	position: absolute;
+	left: 95px;
+	top: 12px;
+}
+#frame #role #roleSelect li{
+	padding-left: 12px;
+	width:81px;
+	height:32px;
+	/* border: 1px solid red; */
+	color: #000;
+	list-style: none;
+	line-height: 32px;
+	background-color: #fff;
+}
+#frame #adminUser{
+	margin-top: 24px;
+	width:180px;
+	height:32px;
+}
+#frame #adminPwd{
+	margin-top: 24px;
+	width:180px;
+	height:32px;
+	margin-bottom: 32px;
+}
+#frame #jurisdiction{
+	background:rgba(255,255,255,1);
+	border-radius:4px;
+	border:1px solid rgba(114,92,215,0.3);
+	padding-left: 12px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-right: 31px;
+	display: inline;
+	margin-top: 24px;
+	width:57px;
+	height:32px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.25);
+}
+
+.Label1{
+	margin-left: 33px;
+	/* margin-top: 40px; */
+}
+.Label2{
+	margin-left: 20px;
+}
+.Label3{
+	margin-left: 20px;
+}
+.Label4{
+	margin-left: 33px;
+}
+.Label5{
+	margin-left: 20px;
+}
+.Label6{
+	margin-left: 33px;
+}
+#frame{
+	padding-bottom: 170px;
+	border-bottom: 1px solid rgba(0,0,0,0.09);
+}
+.addPersonDateButtonDiv #no{
+	margin-left: 526px;
+	margin-top: 10px;
+	text-align: center;
+	line-height: 32px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.65);
+	float: left;
+	width:65px;
+	height:32px;
+}
+.addPersonDateButtonDiv #yes{
+	margin-left: 8px;
+	margin-top: 11px;
+	text-align: center;
+	line-height: 32px;
+	float: left;
+	width:65px;
+	height:32px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+}
+.addEl{
+	/* border: 1px solid red; */
+	position: relative;
+}
+.addEl .titlePng{
+	width:680px;
+	height:53px;
+}
+.addEl .titlePngSon{
+	position: absolute;
+	left: 240px;
+	top: -105px;
+	width:204px;
+	height:155px;
+}
+.addEl #shopOwner{
+	width:138px;
+	height:32px;
+}
+.addEl #por{
+	width:78px;
+	height:32px;
+}
+.addEl #city{
+	width:78px;
+	height:32px;
+}
+.addEl #elIp{
+	width:286px;
+	height:32px;
+}
+.addEl #elCpu{
+	width:286px;
+	height:32px;
+}
+.addEl #elMac{
+	width:286px;
+	height:32px;
+}
+.addEl #time1{
+	width:130px;
+	height:32px;
+}
+.addEl label{
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.85);
+}
+.addEl .inputDiv{
+	margin-left: 33px;
+	margin-top: 35px;
+}
+.addEl .inputDiv div:nth-of-type(1){
+	margin-bottom: 24px;
+}
+.addEl .inputDiv div:nth-of-type(2){
+	margin-bottom: 24px;
+}
+.addEl .inputDiv div:nth-of-type(3){
+	margin-bottom: 24px;
+}
+.addEl .inputDiv div:nth-of-type(4){
+	margin-bottom: 24px;
+}
+#porLabel{
+	margin-left: 20px;
+	
+}
+#por{
+	margin-right: 20px;
+}
+#bottomDiv{
+	border-top: 1px solid #E8E8E8;
+	margin-top: 110px;
+}
+#addElButton{
+	margin-top: 10px;
+	width:96px;
+	height:32px;
+	text-align: center;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+	line-height:32px;
+	float: left;
+	margin-left:8px;
+}
+#off{
+	margin-left: 495px;
+	margin-top: 10px;
+	float: left;
+	width:65px;
+	height:32px;
+	text-align: center;
+	line-height:32px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.65);
+}
+#pageNumber{
+	margin-right: 24px;
+	margin-bottom: 10px;
+}

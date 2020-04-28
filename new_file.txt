@@ -1,0 +1,82 @@
+VIP.html
+		<link rel="stylesheet" href="/css/index.css" />
+		<link rel="stylesheet" href="/css/all.css" />
+		<link rel="stylesheet" href="/css/VIPTable.css"/>
+		<script type="text/javascript" src="/js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="/js/chengeIcon.js"></script>
+		<script type="text/javascript" src="/js/InitVIPGetData.js"></script>
+		<script type="text/javascript" src="/js/changeVIPPage.js"></script>
+		<script type="text/javascript" src="/js/jumpPage.js"></script>
+		<script type="text/javascript" src="/js/webHeight.js"></script>
+		<script type="text/javascript" src="/js/jquerysession.js"></script>
+		<script type="text/javascript" src="/js/loginDate.js"></script>
+login.html
+	<script type="text/javascript" src="/js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="/js/jquerysession.js"></script>
+	<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/js/login.js"></script>
+	<link rel="stylesheet" href="/css/all.css" />
+index.html
+	<link rel="stylesheet" href="/css/index.css" />
+	<link rel="stylesheet" href="/css/all.css" />
+	<link rel="stylesheet" href="/css/indexTable.css"/>
+	<script type="text/javascript" src="/js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/js/chengeIcon.js"></script>
+	<script type="text/javascript" src="/js/changeShopPage.js"></script>
+	<script type="text/javascript" src="/js/jumpPage.js"></script>
+	<script type="text/javascript" src="/js/indexGiveData.js"></script>
+	<script type="text/javascript" src="/js/InitShopGetData.js"></script>
+	<script type="text/javascript" src="/js/webHeight.js"></script>
+	<script type="text/javascript" src="/js/deleteShop.js"></script>
+	<script type="text/javascript" src="/js/jquerysession.js"></script>
+	<script type="text/javascript" src="/js/loginDate.js"></script>
+gamedata.html
+	<link rel="stylesheet" href="/css/index.css" />
+	<link rel="stylesheet" href="/css/all.css" />
+	<link rel="stylesheet" href="/css/gameData.css" />
+	<link rel="stylesheet" href="/css/page_common.css" />
+	<link rel="stylesheet" href="/css/dateSelect.css" />
+	<script type="text/javascript" src="/js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/js/page_common.js"></script>
+	<script type="text/javascript" src="/js/dateSelect.js"></script>
+	<script type="text/javascript" src="/js/chengeIcon.js"></script>
+	<script type="text/javascript" src="/js/jumpPage.js"></script>
+	<script type="text/javascript" src="/js/webHeight.js"></script>
+	<script type="text/javascript" src="/js/jquerysession.js"></script>
+	<script type="text/javascript" src="/js/gameData.js"></script>
+	<script type="text/javascript" src="/js/loginDate.js"></script>
+game.html
+	<link rel="stylesheet" href="/css/all.css" />
+	<link rel="stylesheet" href="/css/index.css" />
+	<link rel="stylesheet" href="/css/game.css" />
+	<link rel="stylesheet" href="/css/dateSelect.css" />
+	<script type="text/javascript" src="/js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/js/dateSelect.js"></script>
+	<script type="text/javascript" src="/js/chengeIcon.js"></script>
+	<script type="text/javascript" src="/js/jumpPage.js"></script>
+	<script type="text/javascript" src="/js/webHeight.js"></script>
+	<script type="text/javascript" src="/js/jquerysession.js"></script>
+	<script type="text/javascript" src="/js/echarts.js"></script>
+	<script type="text/javascript" src="/js/game.js"></script>
+	<script type="text/javascript" src="/js/loginDate.js"></script>
+addshop.html
+	<link rel="stylesheet" href="/css/all.css" />
+	<link rel="stylesheet" href="/css/addShop.css" />
+	<link rel="stylesheet" href="/css/style.css"/>
+	<script type="text/javascript" src="/js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/js/chengeIcon.js"></script>
+	<script type="text/javascript" src="/js/jquery.nicescroll.js"></script>
+	<script type="text/javascript" src="/js/address.js"></script>
+	<script type="text/javascript" src="/js/inputCss.js"></script>
+	<script type="text/javascript" src="/js/webHeightAdd.js"></script>
+	<script type="text/javascript" src="/js/jumpPage.js"></script>
+	<script type="text/javascript" src="/js/getData.js"></script>
+	<script type="text/javascript" src="/js/addShop.js"></script>
+	<script type="text/javascript" src="/js/popup.js"></script>
+	<script type="text/javascript" src="/js/timePacker.js"></script>
+	<script type="text/javascript" src="/js/jquerysession.js"></script>
+	<script type="text/javascript" src="/js/loginDate.js"></script>

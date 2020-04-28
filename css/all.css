@@ -1,0 +1,445 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	/*position: absolute;*/
+	/* position: relative; */
+	
+}
+
+#topPageNum{
+	display: none;
+}
+#pageShowNumD{
+	margin-right: 33px;
+	visibility: hidden;
+}
+
+#menuUl li:nth-of-type(5) p{
+	width: 100px;
+}
+/*页面大容器*/
+#allContainer {
+	/* border: 1px solid red; */
+	margin: 0 auto;
+	width: 1440px;
+	height: auto;
+	overflow: hidden;
+	background: rgba(240, 242, 245, 1);
+	/* position: fixed; */
+	position:relative;
+}
+/*左上角LOGO容器*/
+#logoAi {
+	float: left;
+	width: 256px;
+	height: 70px;
+	/*background: linear-gradient(180deg, rgba(255, 62, 148, 1) 0%, rgba(96, 180, 254, 1) 100%);*/
+	background: linear-gradient(#3B1A5B, #24195D);
+	/*opacity: 0.17;*/
+	/*filter: blur(8px);*/
+}
+/*左上角容器图片*/
+#logoIMG {
+	width: 132px;
+	height: 54px;
+	margin-left: 62px;
+	margin-top: 12px;
+}
+/*页面头 图容器*/
+#topIMG {
+	float: left;
+	width: 1188px;
+	height: 70px;
+	margin-left: -4px;
+	padding-left: 0;
+	/* background-image: url(img/bg_top.png); */
+	background-image: url(../img/bg_top.png);
+	/*background: rgba(31, 18, 80, 1);*/
+	box-shadow: 0px 1px 4px 0px rgba(0, 21, 41, 0.12);
+}
+/*页面头图*/
+#topPNG {
+	width: 1184px;
+	height: 70px;
+	margin: 0;
+	padding: 0;
+}
+/*侧边栏容器*/
+#leftMenu {
+	float: left;
+	width: 256px;
+	/* position: absolute; */
+	height: 100%;
+	/* height: calc(100vh - 100px);     */
+	/* background-image: url("img/侧边栏bg.png"); */
+	background-image: url(../img/侧边栏bg.png);
+}
+/*侧边栏图*/
+#menuIMG {
+	width: 256px;
+	height: 100%;
+}
+
+#middleFunction {
+	width: 1136px;
+	height: auto;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 2px;
+	float: left;
+	margin-left: 24px;
+	margin-top: 24px;
+	
+}
+/*头像*/
+#headPortrait {
+	float: left;
+	width: 38px;
+	height: 38px;
+	border-radius: 19px;
+	background: rgba(166, 219, 255, 1);
+	border: 2px solid rgba(255, 255, 255, 1);
+	margin-left: 1016px;
+	margin-top: 16px;
+}
+/*用户名*/
+#userName {
+	margin-top: 24px;
+	margin-left: 16px;
+	float: left;
+	width: 84px;
+	height: 22px;
+}
+/*用户名字体*/
+.userFontStyle {
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+	line-height: 22px;
+}
+/*菜单样式*/
+.menuLi {
+	width: 256px;
+	list-style: none;
+	height: 56px;
+}
+/*menuli div左浮动*/
+.menuLi div{
+	float: left;
+}
+/*显示页面的背景*/
+.menuLiStyle {
+	background: linear-gradient(90deg, rgba(97, 79, 182, 1) 0%, rgba(123, 45, 158, 1) 100%);
+}
+/*侧边栏图标*/
+.menuAi {
+	margin-left: 18px;
+	margin-top: 22px;
+	width: 14px;
+	height: 14px;
+	float: left;
+}
+/*侧边栏字*/
+.menuText {
+	width: 56px;
+	height: 22px;
+	float: left;
+	margin-left: 12px;
+	margin-top: 17px;
+}
+/*侧边栏字体*/
+.menuFont {
+	font-size: 14px;
+	font-family: PingFangSC-Medium, PingFang SC;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+	line-height: 22px;
+}
+/*蓝图*/
+.displayBar {
+	visibility: hidden;
+	z-index: 5;
+	float: right;
+	position: relative;
+	left: 250px;
+	top: -1px;
+	width: 6px;
+	height: 56px;
+	background: rgba(0, 254, 252, 1);
+}
+/*紫色按钮图*/
+.buttonBackColor_Blue {
+	background: rgba(114, 92, 215, 1);
+	border-radius: 4px;
+}
+/*紫色按钮字体*/
+.button_Blue p {
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+	line-height: 32px;
+}
+/*字体居中*/
+.textCenter p{
+	text-align: center;
+}
+/*字体居中*/
+.textCenter_table{
+	text-align: center;
+}
+/*白色按钮字体*/
+.button_White p {
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.65);
+	line-height: 32px;
+}
+/*白色按钮图*/
+.buttonBackColor_White {
+	border-radius: 4px;
+	background: rgba(255, 255, 255, 1);
+	border: 1px solid rgba(217, 217, 217, 1);
+}
+/*标题字体*/
+.titleText p{
+	font-size:16px;
+	font-family:PingFangSC-Medium,PingFang SC;
+	font-weight:bold;
+	color:rgba(0,0,0,0.85);
+}
+
+#tableDiv{
+	margin-top: 16px;
+}
+/*表格样式*/
+.tableStyle {
+	/* word-break:break-all;
+	table-layout: fixed; */
+	/* margin-top: 16px; */
+	border-collapse: collapse;
+	margin: 0 auto;
+	width: 1072px;
+	text-align: left;
+	word-break: break-all;
+}
+.tableStyle tbody td:nth-of-type(1){
+	padding-left: 16px;
+}
+.theadStyle tr {
+	background: rgba(250, 250, 250, 1);
+}
+.theadStyle tr th {
+	margin-left: -1px;
+	font-size: 14px;
+	font-family: PingFangSC-Medium, PingFang SC;
+	font-weight: 500;
+	color: rgba(0, 0, 0, 0.85);
+	font-weight: bold;
+	height: 54px;
+}
+.tableStyle tbody tr td{
+	/* height: 55px; */
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.65);
+	border-bottom: 1px solid rgba(232,232,232,1);
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+/*主页专用*/
+
+/*编辑删除样式*/
+.editShop{
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-right: 22px;
+}
+.deleteShop{
+	width: 20px;
+	height: 20px;
+	float: left;
+}
+/*侧边栏图标样式*/
+.menuAi img{
+	margin-left: -4px;
+	margin-top: -3px;
+}
+/*左下角数据DIV*/
+.dataText{
+	margin-top: 41px;
+	margin-left: 44px;
+	width:250px;
+	height:20px;
+	float: left;
+}
+/*数据字体*/
+.dataText p{
+	
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(85,93,97,1);
+	line-height:20px;
+}
+/*页码样式*/
+#pageNumber{
+	margin-top: 31px;
+	/* margin-left: 244px; */
+	float: right;
+	padding-bottom: 30px;
+}
+/*页码单独list样式*/
+#pageNumber ul li{
+	list-style: none;
+	text-align: center;
+	line-height: 30px;
+	width:30px;
+	height:30px;
+	background:rgba(114,92,215,0.2);
+	border-radius:4px;
+	margin-left: 5px;
+	float: left;
+}
+#pageNumber ul li{
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(31,18,80,1);
+}
+#pageNumber .currentPage{
+	background:rgba(114,92,215,1);
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+}
+.currentPageChange{
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(31,18,80,1);
+	line-height: 30px;
+	text-align: center;
+}
+#pageShowNumD{
+	float: right;
+	width:85px;
+	height:30px;
+	background:rgba(114,92,215,0.2);
+	border-radius:4px;
+}
+.pageShowNumDC{
+	margin-left: 5px;
+	margin-top: 31px;
+}
+.pageShowNum{
+	width:30px;
+	height:30px;
+	background:rgba(114,92,215,0.2);
+	border-radius:4px;
+	line-height: 30px;
+}
+#topPageNum{
+	float: right;
+	height:30px;
+	width: 100px;
+	margin-right: 40px;
+}
+#topPageNum div{
+	float: left;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#topPageNum span{
+	float: left;
+	line-height: 30px;
+	
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(31,18,80,1);
+	
+}
+/*弹窗*/
+#popup {
+	z-index: 10;
+	display: none;
+	position: absolute;
+	left: 482px;
+	top: 285px;
+	width: 680px;
+	height: 465px;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	/* border: 1px solid red; */
+}
+/*遮罩*/
+#mask {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 9;
+	background: rgba(0, 0, 0, 0.65);
+	width: 5000px;
+	height: 5000px;
+}
+/*输入框样式*/
+.inputText {
+	outline: none;
+	border-radius: 4px;
+	border: 1px solid rgba(114, 92, 215, 0.3);
+	padding-left: 12px;
+}
+/*输入框字体*/
+.inputText::-webkit-input-placeholder {
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.25);
+	line-height: 22px;
+}
+/* #addShopIcon img{
+	margin-top: -5px;
+} */
+.mouseGesture {
+	cursor: pointer;
+}
+.addShopIcon {
+	float: left;
+	width: 13px;
+	height: 13px;
+	/* border: 1px solid white; */
+	margin-left: 14px;
+	margin-top: 5px;
+	margin-right: 8px;
+	
+}
+
+.shopNameFont {
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.85);
+	line-height: 22px;
+}
+#tableDiv2{
+	/* clear: both; */
+	/* margin-top: 50px; */
+}
+.clearfloat{clear:both;height:0;font-size:1px;line-height:0px;} 
+.disNone{
+	display: none;
+}
+.menuAi1 img{
+	margin-top: 21px;
+	margin-left: 17px;
+}

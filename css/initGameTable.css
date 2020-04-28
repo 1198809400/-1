@@ -1,0 +1,64 @@
+#tableDiv .theadStyle th:nth-of-type(1){
+	width: 28px;
+	padding-left: 15px;
+}
+#tableDiv .theadStyle th:nth-of-type(2){
+	width: 56px;
+	padding-left: 25px;
+}
+#tableDiv .theadStyle th:nth-of-type(3){
+	width: 56px;
+	padding-left: 40px;
+}
+#tableDiv .theadStyle th:nth-of-type(4){
+	width: 56px;
+	padding-left: 49px;
+}
+#tableDiv .theadStyle th:nth-of-type(5){
+	width: 28px;
+	padding-left:60px;
+}
+#tableDiv .theadStyle th:nth-of-type(6){
+	width:80px;
+	padding-left: 14px;
+}
+#tableDiv .theadStyle th:nth-of-type(7){
+	width:72px;
+	padding-left: 14px;
+}
+#tableDiv .theadStyle th:nth-of-type(8){
+	width:40px;
+	padding-left: 30px;
+}
+#tableDiv  td:nth-of-type(1){
+	width: 28px;
+	padding-left: 15px;
+}
+#tableDiv td:nth-of-type(2){
+	width: 56px;
+	padding-left: 25px;
+}
+#tableDiv td:nth-of-type(3){
+	width: 56px;
+	padding-left: 40px;
+}
+#tableDiv td:nth-of-type(4){
+	width: 56px;
+	padding-left: 49px;
+}
+
+#tableDiv td:nth-of-type(5){
+	width:80px;
+	padding-left: 60px;
+}
+#tableDiv td:nth-of-type(6){
+	width:72px;
+	padding-left: 14px;
+}
+#tableDiv td:nth-of-type(7){
+	width:40px;
+	padding-left: 30px;
+}
+#tableDiv td:nth-of-type(8) .editShop{
+	margin-right: 5px;
+}

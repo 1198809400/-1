@@ -1,0 +1,52 @@
+.iconfont {
+    /* font-size:16px; */
+}
+
+.icon-you:before {
+    content: ">";
+}
+
+.icon-zuo:before {
+    content: "<";
+}
+
+/* .icon-most-left:before {
+    content: "<<";
+} */
+
+/* .icon-most-right:before {
+    content: ">>";
+}
+ */
+.page_common_btn_style{
+	
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(31,18,80,1);
+	line-height:30px;
+	width:30px;
+	height:30px;
+	background:rgba(114,92,215,0.2);
+	border-radius:4px;
+    display: inline-block;
+    padding:0 2px;
+    line-height: 30px;
+    text-align: center;
+    color: #606266;
+    margin: 0 3px;
+    cursor: pointer;
+}
+a.page_common_btn_style:active{
+    color:#409eff;
+    background:#eee;
+}
+
+.page_btn_box {
+    display: inline-block;
+    /* margin: 0 10px; */
+}
+.page_common_btn_active{
+    background:#409eff;
+    color:#eee;
+}

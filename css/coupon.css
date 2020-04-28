@@ -1,0 +1,209 @@
+#couponType {
+	padding-top: 20px;
+	overflow: hidden;
+	clear: both;
+}
+#leftMenu{
+	height: 670px;
+}
+#couponType p {
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.85);
+	float: left;
+}
+
+#all_deleteDiv {
+	/* display: inline; */
+	float: left;
+}
+
+#experienceDiv {
+	/* display: inline; */
+	float: left;
+}
+
+.couponTextDiv {
+
+	clear: both;
+}
+
+#addCoupon {
+	position: relative;
+	/* margin-top: 55px; */
+	margin-left: 33px;
+	height: 410px;
+}
+
+#addCoupon label {
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.85);
+}
+
+#addCoupon span {
+	font-size: 12px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(79, 89, 111, 1);
+}
+
+#addCoupon #couponText {
+	width: 286px;
+	height: 32px;
+}
+
+#addCoupon #couponCanBeginTime {
+	background: url(../img/Icon／Time.png) no-repeat 120px 8px;
+	margin-left: 13px;
+	width: 130px;
+	height: 32px;
+}
+
+#addCoupon #couponCanEndTime {
+	background: url(../img/Icon／Time.png) no-repeat 120px 8px;
+	width: 130px;
+	height: 32px;
+}
+
+#addCoupon #couponGoBeginTime {
+	margin-left: 13px;
+	background: url(../img/Icon／Time.png) no-repeat 120px 8px;
+	width: 130px;
+	height: 32px;
+}
+
+#addCoupon #couponGoEndTime {
+	background: url(../img/Icon／Time.png) no-repeat 120px 8px;
+	width: 130px;
+	height: 32px;
+}
+
+#addCoupon .couponTextDiv {
+	margin-top: 20px;
+}
+
+#addCoupon .couponCanBeginTimeDiv {
+	margin-top: 20px;
+}
+
+#addCoupon .couponGoBeginTimeDiv {
+	margin-top: 20px;
+}
+
+.text1 {
+	margin-left: 24px;
+	margin-top: 16px;
+	float: left;
+	font-size: 16px;
+	font-family: PingFangSC-Medium, PingFang SC;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.text2 {
+	margin-top: 16px;
+	float: left;
+	margin-left: 533px;
+	font-size: 16px;
+	font-family: PingFangSC-Medium, PingFang SC;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+#level {
+	width: 40px;
+	height: 32px;
+	margin-left: 14px;
+	margin-right: 14px;
+}
+
+.couponPersonDiv {
+	margin-top: 20px;
+}
+
+.couponPersonDiv label {
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.65);
+}
+
+.couponPersonDiv #couponPerson1 {
+	width: 16px;
+	height: 16px;
+	margin-left: 20px;
+}
+
+.couponPersonDiv #couponPerson2 {
+	width: 16px;
+	height: 16px;
+	margin-left: 35px;
+}
+
+.couponPersonDiv #couponPerson3 {
+	width: 16px;
+	height: 16px;
+	margin-left: 35px;
+}
+
+.couponPersonDiv #couponPerson4 {
+	margin-top: 20px;
+	width: 16px;
+	height: 16px;
+	/* margin-left: 95px; */
+}
+
+.remarksDiv #remarks {
+	margin-top: 20px;
+	margin-left: 33px;
+	width: 520px;
+	height: 32px;
+}
+
+#yesClose {
+	background-color: #FFF;
+	width: 680px;
+	height: 52px;
+	border-top: 1px solid rgba(0, 0, 0, 0.09);
+	/* border: 1px solid red; */
+	border-radius: 4px;
+	/* position: absolute; */
+	/* left: 0; */
+	/* top: 412px; */
+}
+
+#yesClose .close {
+	text-align: center;
+	width: 65px;
+	height: 32px;
+	float: left;
+	margin-left: 495px;
+	margin-top: 10px;
+	line-height: 32px;
+	font-size:14px;
+	font-family:PingFangSC-Regular,PingFang SC;
+	font-weight:400;
+	color:rgba(0,0,0,0.65);
+}
+
+#yesClose #yesGo {
+	margin-left: 495px;
+	font-size: 14px;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+
+
+	text-align: center;
+	line-height: 32px;
+	margin-top: 11px;
+	width: 96px;
+	height: 32px;
+	float: left;
+}
+#searchShop #returnText p{
+	width: 80px;
+}
