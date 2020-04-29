@@ -4,6 +4,7 @@ var endTime = 0;
 var num = 0;
 var firstNum = 0;
 $(function() {
+	$.cookie("shopId","");
 	var myDate = new Date;
 	var year = myDate.getFullYear(); //获取当前年
 	var mon = myDate.getMonth() + 1; //获取当前月

@@ -23,6 +23,7 @@ function parseURL(url){
 		$("input").removeAttr("disabled");
 		$(".buttonBackColor_Blue").css("display","block");
 	}
+	$.cookie("isPhoneRight","true");
 	for(var i = 0;i<dataArr.length;i++){
 		var data = dataArr[i];
 		

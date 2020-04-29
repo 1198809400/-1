@@ -1,5 +1,6 @@
 var eleBool = false;
 var statu1 = "";
+
 function queryPerson(shopId) {
 	var jsonData = {
 		"command": "query_staff_info",
@@ -19,14 +20,14 @@ function queryPerson(shopId) {
 			console.log(data.data);
 			var inHtml = "";
 			var showEndNum = 0;
-			for (var i = 0; i < shopData.length; i++) {
+			for(var i = 0; i < shopData.length; i++) {
 				inHtml += "<tr><td>" + (i + 1) + "</td>" +
 					"<td>" + shopData[i].name + "</td>" +
 					"<td>" + shopData[i].shop_id + "</td>" +
 					"<td>" + shopData[i].phone_num + "</td>" +
 					"<td>" + shopData[i].account + "</td>" +
 					"<td>" + shopData[i].city + "</td>" +
-					"<td>" + shopData[i].province  + "</td>" +
+					"<td>" + shopData[i].province + "</td>" +
 					"<td>" +
 					"<div class='editShop mouseGesture'>" +
 					"<img src='img/map _edit备份.svg' />" +
@@ -74,7 +75,7 @@ function queryDevice(beginNum, endNum) {
 			console.log(data.data);
 			var inHtml = "";
 			var showEndNum = 0;
-			for (var i = 0; i < shopData.length; i++) {
+			for(var i = 0; i < shopData.length; i++) {
 				inHtml += "<tr><td>" + (i + 1) + "</td>" +
 					"<td>" + shopData[i].ip + "</td>" +
 					"<td>" + shopData[i].cpu + "</td>" +
@@ -93,7 +94,7 @@ function queryDevice(beginNum, endNum) {
 			$("#tableDiv2 tbody").html(inHtml);
 			var tNumber = data.total_items;
 			console.log(tNumber);
-			if (!eleBool) {
+			if(!eleBool) {
 				initPage(tNumber, endNum);
 				eleBool = true;
 			}
@@ -117,20 +118,20 @@ $(function() {
 	console.log(oNoHis);
 	console.log(ohaveHis);
 	var role = $.cookie("rolePerson");
-	if(role == "1"){
-		var html111 = "<li>总店长</li>"+
-		"<li>分店长</li>"+
-		"<li>店员</li>"+
-		"<li>员工</li>";
+	if(role == "1") {
+		var html111 = "<li>总店长</li>" +
+			"<li>分店长</li>" +
+			"<li>店员</li>" +
+			"<li>员工</li>";
 		$("#roleSelect").html(html111);
-		
-	}else{
-		var html111 = "<li>分店长</li>"+
-		"<li>店员</li>"+
-		"<li>员工</li>";
+
+	} else {
+		var html111 = "<li>分店长</li>" +
+			"<li>店员</li>" +
+			"<li>员工</li>";
 		$("#roleSelect").html(html111);
 	}
-	if ($.cookie("personShopId") != undefined || $.cookie("shopId") != undefined) {
+	if($.cookie("personShopId") != undefined || $.cookie("shopId") != undefined) {
 		queryPerson($.cookie("shopId"));
 	}
 	$("#off").click(function() {
@@ -145,7 +146,7 @@ $(function() {
 		var id = $(this).parent().parent("tr");
 		var mac = id.find("td").eq(3).text();
 		console.log(mac);
-		if (confirm("确定删除吗？")) {
+		if(confirm("确定删除吗？")) {
 			deleteEle(mac, id);
 		}
 	});
@@ -159,10 +160,10 @@ $(function() {
 		console.log(shopAddressCity);
 		var shopAddressPro = $.cookie("proText"); //店铺所在省
 		console.log(shopAddressPro);
-		if (shopAddressCity == undefined || shopAddressCity == "" || shopAddressCity == null) {
+		if(shopAddressCity == undefined || shopAddressCity == "" || shopAddressCity == null) {
 			shopAddressCity = "朝阳区";
 		}
-		if (shopAddressPro == undefined || shopAddressPro == "" || shopAddressPro == null) {
+		if(shopAddressPro == undefined || shopAddressPro == "" || shopAddressPro == null) {
 			shopAddressPro = "北京";
 		}
 		var shopDetaAdd = $("#detailedAddress").val(); //店铺详细地址
@@ -179,21 +180,21 @@ $(function() {
 		var intCloseTime = parseInt($("#endHours").val().split(":")[0]);
 		console.log(intOpenTime + ".." + isNaN(intOpenTime));
 		console.log(intCloseTime);
-		if (isNaN(intOpenTime)) {
+		if(isNaN(intOpenTime)) {
 			alert("请选择营业时间");
 			return;
 		}
-		if (isNaN(intCloseTime)) {
+		if(isNaN(intCloseTime)) {
 			alert("请选择营业时间");
 			return;
 		}
-		if ((shopDetaAdd == "" || shopDetaAdd == null) && (longitude == "" ||
+		if((shopDetaAdd == "" || shopDetaAdd == null) && (longitude == "" ||
 				longitude == null) && (latitude == "" || latitude == null) && (shopPhone == "" || shopPhone == null) && (
 				landlineNum == "" || landlineNum == null) && (opengingHours == "" || opengingHours == null) && (endHours == "" ||
 				endHours == null) && (intOpenTime == "" || intOpenTime == null) && (intCloseTime == "" || intCloseTime == null)) {
 			alert("请补全店铺信息");
 		}
-		if (shopName == null || shopName == "") {
+		if(shopName == null || shopName == "") {
 			alert("店铺名不能为空");
 			console.log("ceshi2");
 			$("#postError").fadeIn();
@@ -202,7 +203,7 @@ $(function() {
 			}, 2000);
 			return;
 		}
-		if (shopDetaAdd == null || shopDetaAdd == "") {
+		if(shopDetaAdd == null || shopDetaAdd == "") {
 			alert("请填写详细地址");
 			console.log("ceshi2");
 			$("#postError").fadeIn();
@@ -211,7 +212,7 @@ $(function() {
 			}, 2000);
 			return;
 		}
-		if (landlineNum == null || landlineNum == "") {
+		if(landlineNum == null || landlineNum == "") {
 			alert("请填写店铺座机");
 			console.log("ceshi2");
 			$("#postError").fadeIn();
@@ -220,7 +221,7 @@ $(function() {
 			}, 2000);
 			return;
 		}
-		if (intOpenTime == null || intOpenTime == "") {
+		if(intOpenTime == null || intOpenTime == "") {
 			alert("请选择开店时间");
 			console.log("ceshi2");
 			$("#postError").fadeIn();
@@ -229,7 +230,7 @@ $(function() {
 			}, 2000);
 			return;
 		}
-		if (intCloseTime == null || intCloseTime == "") {
+		if(intCloseTime == null || intCloseTime == "") {
 			alert("请选择闭店时间");
 			console.log("ceshi2");
 			$("#postError").fadeIn();
@@ -238,7 +239,7 @@ $(function() {
 			}, 2000);
 			return;
 		}
-		if (intOpenTime >= intCloseTime) {
+		if(intOpenTime >= intCloseTime) {
 			alert("时间选择错误");
 			$("#postError").fadeIn();
 			setTimeout(function() {
@@ -248,7 +249,7 @@ $(function() {
 		}
 
 		var isPhoneRight = $.cookie("isPhoneRight");
-		if (isPhoneRight != "true") {
+		if(isPhoneRight != "true") {
 			alert("手机号输入错误");
 			console.log("ceshi");
 			$("#postError").fadeIn();
@@ -269,7 +270,7 @@ $(function() {
 		console.log(operation);
 		var shopId = $.cookie("shopId");
 		var json = "";
-		if (operation == "change") {
+		if(operation == "change") {
 			order = "modify_shop_address";
 			json = {
 				"shop_id": shopId, // 店面id
@@ -312,7 +313,7 @@ $(function() {
 			success: function(data) {
 				console.log(data.toString());
 				var status = data.status;
-				if (status == "succeed") {
+				if(status == "succeed") {
 					initDate();
 					$("#postSuccess").fadeIn();
 					setTimeout(function() {
@@ -323,7 +324,7 @@ $(function() {
 				} else {
 					console.log(data);
 
-					if (data.data[0].result == "The shop already exists") {
+					if(data.data[0].result == "The shop already exists") {
 						alert("该店铺名已存在，请修改店铺名称");
 					}
 					$("#postError").fadeIn();
@@ -337,7 +338,7 @@ $(function() {
 			}
 		});
 	});
-	$("#tableDiv").on("click",".editShop",function(){
+	$("#tableDiv").on("click", ".editShop", function() {
 		statu1 = "update";
 		console.log(statu1);
 		$(".searchPhoneNum").css("display", "none");
@@ -356,102 +357,102 @@ $(function() {
 		var username = tab.eq(4).text();
 		$("#personName").val(name);
 		$("#adminUser").val(username);
-		$("#adminUser").attr("disabled","disabled");
-		
+		$("#adminUser").attr("disabled", "disabled");
+
 		// updatePerson(userName, password, name, type, phoneNum)
 	});
 	//鼠标悬浮效果
-	$("#tableDiv tbody").on("mouseover","tr",function(){
+	$("#tableDiv tbody").on("mouseover", "tr", function() {
 		// alert(1);
-		$(this).css("background","#E7F8FD");
+		$(this).css("background", "#E7F8FD");
 	});
 	//鼠标悬浮效果
-	$("#tableDiv tbody").on("mouseout","tr",function(){
+	$("#tableDiv tbody").on("mouseout", "tr", function() {
 		// alert(1);
-		$(this).css("background","#FFFFFF");
+		$(this).css("background", "#FFFFFF");
 	});
-	$("#tableDiv2 tbody").on("mouseover","tr",function(){
+	$("#tableDiv2 tbody").on("mouseover", "tr", function() {
 		// alert(1);
-		$(this).css("background","#E7F8FD");
+		$(this).css("background", "#E7F8FD");
 	});
 	//鼠标悬浮效果
-	$("#tableDiv2 tbody").on("mouseout","tr",function(){
+	$("#tableDiv2 tbody").on("mouseout", "tr", function() {
 		// alert(1);
-		$(this).css("background","#FFFFFF");
+		$(this).css("background", "#FFFFFF");
 	});
-	
-	$(document).on("mouseover",".editShop",function(){
+
+	$(document).on("mouseover", ".editShop", function() {
 		$(this).find("img").attr("src", "img/map _edit_click.svg");
 	});
-	$(document).on("mouseout",".editShop",function(){
+	$(document).on("mouseout", ".editShop", function() {
 		$(this).find("img").attr("src", "img/map _edit备份.svg");
 	});
-	$(document).on("mouseover",".deleteShop",function(){
+	$(document).on("mouseover", ".deleteShop", function() {
 		$(this).find("img").attr("src", "img/Combined Shape.svg");
 	});
-	$(document).on("mouseout",".deleteShop",function(){
+	$(document).on("mouseout", ".deleteShop", function() {
 		$(this).find("img").attr("src", "img/3rd_trash_b备份 3.svg");
 	});
-	
-	$("#tableDiv").on("click",".deleteShop",function(){
-		if(confirm("确定删除？")){
+
+	$("#tableDiv").on("click", ".deleteShop", function() {
+		if(confirm("确定删除？")) {
 			var id = $(this).parent().parent("tr");
-			deletePerson($(this).parent().parent("tr").find("td").eq(4).text(),id);
+			deletePerson($(this).parent().parent("tr").find("td").eq(4).text(), id);
 		}
 	});
 	$("#addElButton").click(function() {
 		var IP = $("#elIp").val();
 		var zhengZe = /((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/;
-		if (IP == null || IP == undefined || IP == "") {
+		if(IP == null || IP == undefined || IP == "") {
 			alert("请输入IP地址");
 			return;
 		}
-		if (!zhengZe.test(IP)) {
+		if(!zhengZe.test(IP)) {
 			alert("请输入正确的IP地址");
 			return;
 		}
 		var cpu = $("#elCpu").val();
-		if (cpu == null || cpu == undefined || cpu == "") {
+		if(cpu == null || cpu == undefined || cpu == "") {
 			alert("请输入cpu地址");
 			return;
 		}
 		var mac = $("#elMac").val();
 		var zhengZe2 = /^([0-9a-fA-F]{2})(([/\s:][0-9a-fA-F]{2}){5})$/;
 		var zhengZe3 = /^([0-9a-fA-F]{2})(([/\s:][0-9a-fA-F]{2}){5})$/;
-		if (mac == null || mac == undefined || mac == "") {
+		if(mac == null || mac == undefined || mac == "") {
 			alert("请输入mac地址");
 			return;
 		}
 		var mac1 = false;
 		var mac2 = false;
-		if (!zhengZe2.test(mac)) {
+		if(!zhengZe2.test(mac)) {
 			mac1 = false;
 		} else {
 			mac1 = true;
 		}
-		if (!zhengZe3.test(mac)) {
+		if(!zhengZe3.test(mac)) {
 			mac2 = false;
 		} else {
 			mac2 = true;
 		}
-		if (!mac1) {
-			if (!mac2) {
+		if(!mac1) {
+			if(!mac2) {
 				alert("请输入正确的MAC地址");
 				return;
 			}
 		}
-		if (!zhengZe.test(IP)) {
+		if(!zhengZe.test(IP)) {
 			alert("请输入正确的IP地址");
 			return;
 		}
-		if ($("input[name=status]").val() == "add") {
+		if($("input[name=status]").val() == "add") {
 			addElE(mac, cpu, IP);
 		} else {
 			updateElE(mac, cpu, IP);
 		}
 	});
 	$("#tableDiv2").on("click", ".editShop", function() {
-		if ($.cookie("personShopId") != undefined || $.cookie("shopId") != undefined) {
+		if($.cookie("personShopId") != undefined || $.cookie("shopId") != undefined) {
 			$("input[name=status]").val("update");
 			console.log($(this).parent().parent("tr").find("td").eq(3).text());
 			$("#elMac").val($(this).parent().parent("tr").find("td").eq(3).text());
@@ -472,7 +473,7 @@ $(function() {
 		}
 	});
 	$("#addEquipment").click(function() {
-		if ($.cookie("personShopId") != undefined || $.cookie("shopId") != undefined) {
+		if($.cookie("personShopId") != undefined || $.cookie("shopId") != undefined) {
 			$("input[name=status]").val("add");
 			$(".searchPhoneNum").css("display", "none");
 			$(".addPersonDate").css("display", "none");
@@ -494,7 +495,7 @@ $(function() {
 		console.log($.cookie("shopId"));
 		statu1 = "add";
 		//必须有shopId才能新建管理员
-		if ($.cookie("personShopId") != undefined || $.cookie("shopId") != undefined) {
+		if($.cookie("personShopId") != undefined || $.cookie("shopId") != undefined) {
 			$(".addEl").css("display", "none");
 			$("#popup").css("display", "block");
 			$("#mask").css("display", "block");
@@ -510,7 +511,6 @@ $(function() {
 			alert("请将店铺信息填写完毕并保存后再新建管理员");
 		}
 	});
-
 
 	//根据手机号查询该手机号是否关注公众号
 	function queryPhoneVip(phoneNo) {
@@ -531,7 +531,7 @@ $(function() {
 				// console.log(data.data[0].phone_num);
 				try {
 					console.log(data.data.phone_num);
-					if (data.data.phone_num == undefined) {
+					if(data.data.phone_num == undefined) {
 						alert("请先关注公众号");
 						$("#uName").prop("checked", false);
 						return 1;
@@ -540,7 +540,7 @@ $(function() {
 					$("#headPic #headPicIn").css("visibility", "visible");
 					$("#headPic label").css("visibility", "visible");
 					$("#headPic input").css("visibility", "visible");
-				} catch (e) {
+				} catch(e) {
 					console.log(e);
 					alert("请先关注公众号");
 					// return;
@@ -552,19 +552,18 @@ $(function() {
 	//点击“查询”按钮查看是否关注公众号
 	$("#searchButton").click(function() {
 		var phoneNo = $("#phoneNo").val();
-		if (phoneNo == null || phoneNo == "") {
+		if(phoneNo == null || phoneNo == "") {
 			alert("请填写手机号");
 			return;
 		}
 		queryPhoneVip(phoneNo); //15010485111
 	});
 
-
 	//点击“确定”查看是否选中该用户，选中便跳转
 	$("#yesAdd").click(function() {
 		var isChecked = $("#uName").is(":checked");
 		console.log(isChecked);
-		if (isChecked) {
+		if(isChecked) {
 			$("#popup").fadeOut();
 			setTimeout(function() {
 				$("#popup").css("width", "680px");
@@ -576,7 +575,7 @@ $(function() {
 				$(".addPersonDate .titlePngSon").css("width", "197px");
 				$(".addPersonDate .titlePngSon").css("height", "150px");
 				$("#adminUser").val($("#phoneNo").val());
-				$("#adminUser").attr("disabled","disabled");
+				$("#adminUser").attr("disabled", "disabled");
 			}, 450);
 
 			$("#popup").fadeIn();
@@ -586,27 +585,27 @@ $(function() {
 	//点击“添加”查看必填内容是否都添加，若添加，则新建管理员
 	$("#yes").click(function() { //15010485111
 		var personName = $("#personName").val();
-		if (personName == null || personName == "") {
+		if(personName == null || personName == "") {
 			alert("请输入姓名");
 			return;
 		}
 		var sex = $("#sex span").text();
 
 		var role = $("#role span").text();
-		if (role == "角色") {
+		if(role == "角色") {
 			alert("请选择角色");
 			return;
 		}
-		if (role == "超级管理员") {
+		if(role == "超级管理员") {
 			role = "1";
-		} else if (role == "总店长") {
+		} else if(role == "总店长") {
 			role = "2";
-		} else if (role == "分店长") {
+		} else if(role == "分店长") {
 			role = "3";
-		} else if (role == "店员") {
+		} else if(role == "店员") {
 			role = "4";
-		} else if (role == "员工") {
-			role ="5";
+		} else if(role == "员工") {
+			role = "5";
 		}
 		var adminUser = $("#adminUser").val();
 		// if (adminUser == null || adminUser == "") {
@@ -614,11 +613,11 @@ $(function() {
 		// 	return;
 		// }
 		var adminPwd = $("#adminPwd").val();
-		if (adminPwd == null || adminPwd == "") {
+		if(adminPwd == null || adminPwd == "") {
 			alert("请输入密码");
 			return;
 		}
-		if(statu1 == "update"){
+		if(statu1 == "update") {
 			console.log("更新");
 			updatePerson(adminUser, adminPwd, personName, role, $("#adminUser").val());
 			return;
@@ -648,7 +647,7 @@ $(function() {
 			data: jsonData,
 			success: function(data) {
 				console.log(data);
-				if (data.status == "succeed") {
+				if(data.status == "succeed") {
 					alert("添加成功");
 					$("#popup").css("display", "none");
 					$("#mask").css("display", "none");
@@ -679,7 +678,7 @@ $(function() {
 	$("#frame #sex").click(function(event) {
 		event.stopPropagation();
 		$("#frame #role #roleSelect").css("display", "none");
-		if ($("#frame #sex #sexSelect").css("display") == "none") {
+		if($("#frame #sex #sexSelect").css("display") == "none") {
 			$("#frame #sex #sexSelect").css("display", "block");
 		} else {
 			$("#frame #sex #sexSelect").css("display", "none");
@@ -689,7 +688,7 @@ $(function() {
 	$("#frame #role").click(function(event) {
 		event.stopPropagation();
 		$("#frame #sex #sexSelect").css("display", "none");
-		if ($("#frame #role #roleSelect").css("display") == "none") {
+		if($("#frame #role #roleSelect").css("display") == "none") {
 			$("#frame #role #roleSelect").css("display", "block");
 		} else {
 
@@ -703,9 +702,9 @@ $(function() {
 		var value = $(this).text();
 		$("#frame #role span").text(value);
 		$("#frame #role span").css("color", "#000");
-		if (value == "超级管理员") {
+		if(value == "超级管理员") {
 			$("#frame #role").css("padding-right", "38px");
-		} else if (value == "总店长" || value == "分店长") {
+		} else if(value == "总店长" || value == "分店长") {
 			$("#frame #role").css("padding-right", "66px");
 		} else {
 			$("#frame #role").css("padding-right", "80px");
@@ -741,8 +740,8 @@ function initDate() {
 		success: function(data) {
 			var shopData = data.data;
 			console.log(data.data);
-			for (var i = 0; i < shopData.length; i++) {
-				if ($("#searchShopInput").val() == shopData[i].name && $.cookie("proText") == shopData[i].province) {
+			for(var i = 0; i < shopData.length; i++) {
+				if($("#searchShopInput").val() == shopData[i].name && $.cookie("proText") == shopData[i].province) {
 					console.log("Add Shop Success For Shop Id:" + shopData[i].shop_id);
 					$.cookie("shopId", shopData[i].shop_id);
 					$.cookie("proText", shopData[i].province);
@@ -772,7 +771,7 @@ function addElE(mac, cpu, ip) {
 		data: jsonData,
 		success: function(data) {
 			console.log(data);
-			if (data.status == "succeed") {
+			if(data.status == "succeed") {
 				alert("操作成功");
 				queryDevice(0, 10);
 				$("#popup").css("display", "none");
@@ -802,7 +801,7 @@ function updateElE(mac, cpu, ip) {
 		data: jsonData,
 		success: function(data) {
 			console.log(data);
-			if (data.status == "succeed") {
+			if(data.status == "succeed") {
 				alert("操作成功");
 				queryDevice(0, 10);
 				$("#popup").css("display", "none");
@@ -827,16 +826,16 @@ function deleteEle(mac, id) {
 		data: jsonData,
 		success: function(data) {
 			console.log(data);
-			if (data.status == "succeed") {
+			if(data.status == "succeed") {
 				alert("操作成功");
 				var tmp = null;
 				tmp = id.next();
 				id.remove();
-				while (true) {
+				while(true) {
 					var no = parseInt(tmp.find("td").eq(0).text()) - 1;
 					tmp.find("td").eq(0).text(no);
 					tmp = tmp.next();
-					if (isNaN(no)) {
+					if(isNaN(no)) {
 						break;
 					}
 				}
@@ -886,9 +885,9 @@ function updatePerson(userName, password, name, type, phoneNum) {
 		contentType: "application/x-www-form-urlencoded",
 		dataType: "json",
 		data: jsonData,
-		success: function(data) {	
+		success: function(data) {
 			console.log(data);
-			if (data.status == "succeed") {
+			if(data.status == "succeed") {
 				alert("操作成功");
 				$("#popup").css("display", "none");
 				$("#mask").css("display", "none");
@@ -896,10 +895,11 @@ function updatePerson(userName, password, name, type, phoneNum) {
 		}
 	});
 }
-function deletePerson(phoneNum,id){
+
+function deletePerson(phoneNum, id) {
 	var jsonData = {
-		   "command" : "delete_staff_info",       // 命令
-		   "user_name":phoneNum             // 用户名
+		"command": "delete_staff_info", // 命令
+		"user_name": phoneNum // 用户名
 	};
 	jsonData = JSON.stringify(jsonData);
 	console.log(jsonData);
@@ -912,21 +912,21 @@ function deletePerson(phoneNum,id){
 		data: jsonData,
 		success: function(data) {
 			console.log(data);
-			if (data.status == "succeed") {
+			if(data.status == "succeed") {
 				alert("操作成功");
 				var tmp = null;
 				tmp = id.next();
 				id.remove();
-				while (true) {
+				while(true) {
 					var no = parseInt(tmp.find("td").eq(0).text()) - 1;
 					tmp.find("td").eq(0).text(no);
 					tmp = tmp.next();
-					if (isNaN(no)) {
+					if(isNaN(no)) {
 						break;
 					}
 				}
 			}
 		}
 	});
-	
+
 }
