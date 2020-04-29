@@ -12,48 +12,59 @@ $(function() {
 	//声明shopId变量
 	var shopId = "";
 	//鼠标悬浮效果
-	$(document).on("mouseover",".shopNameLi",function(){
+	$(document).on("mouseover", ".shopNameLi", function() {
 		// alert(1);
-		$(this).css("background","#E7F8FD");
+		$(this).css("background", "#E7F8FD");
 	});
 	//鼠标悬浮效果
-	$(document).on("mouseout",".shopNameLi",function(){
+	$(document).on("mouseout", ".shopNameLi", function() {
 		// alert(1);
-		$(this).css("background","#FFFFFF");
+		$(this).css("background", "#FFFFFF");
 	});
-	
+
 	//当点击输入框时
-	$("#searchShopInput").click(function(event){
+	$("#searchShopInput").click(function(event) {
 		event.stopPropagation();
-		if($(".select").css("display") == 'none'){
-			$(".select").css("display","block");
-		}else{
-			$(".select").css("display","none");
+		if($(".select").css("display") == 'none') {
+			$(".select").css("display", "block");
+		} else {
+			$(".select").css("display", "none");
 		}
 	});
-	
+
 	//点击网页时
 	$(document).click(function() {
-		$(".select").css("display","none");
+		$(".select").css("display", "none");
 	});
 	//点击店铺列表时
-	$(document).on("click",".shopNameLi",function(){
+	$(document).on("click", ".shopNameLi", function() {
 		console.log($(this).text());
 		$("#searchShopInput").val($(this).text());
 		shopId = $(this).find("#shopId").val();
 		console.log(shopId);
-		initShopIdDate("main1",shopId , year + "-" + mon + "-" + date, year + "-" + mon + "-" + date);
+		allMoneyNum = 0;
+		singleExperienceAggregateAmount = 0; // 单次体验
+		discountCoupon = 0; //优惠券
+		internal = 0; //店员开启
+		moreExperience = 0; //不限次数
+		singleExperience = 0;
+		moreExperienceAggregateAmount = 0;
+		initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + date);
 		getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + date);
 	});
-	
-	
-	
+
 	//获取shopId并判断
-	if ($.cookie("personShopId") != "" || $.cookie("personShopId") != null || $.cookie("personShopId") != undefined) {
+	if($.cookie("personShopId") != "" || $.cookie("personShopId") != null || $.cookie("personShopId") != undefined) {
 		shopId = $.cookie("personShopId");
 		console.log(shopId);
 	}
-	
+	allMoneyNum = 0;
+	singleExperienceAggregateAmount = 0; // 单次体验
+	discountCoupon = 0; //优惠券
+	internal = 0; //店员开启
+	moreExperience = 0; //不限次数
+	singleExperience = 0;
+	moreExperienceAggregateAmount = 0;
 	//调用游戏开启次数函数
 	getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + date);
 	//调用店铺流水函数
@@ -70,7 +81,7 @@ $(function() {
 		$(".seletion li").removeClass("choose");
 		$(".seletion li").eq(index).addClass("choose");
 
-		switch (text) {
+		switch(text) {
 			case "今日":
 				beginTime = year + "-" + mon + "-" + date;
 				endTime = year + "-" + mon + "-" + date;
@@ -81,7 +92,14 @@ $(function() {
 				$("#month").fadeOut();
 				$("#year").fadeOut();
 				console.log(main1IsLoad);
-				if (!main1IsLoad)
+				allMoneyNum = 0;
+				singleExperienceAggregateAmount = 0; // 单次体验
+				discountCoupon = 0; //优惠券
+				internal = 0; //店员开启
+				moreExperience = 0; //不限次数
+				singleExperience = 0;
+				moreExperienceAggregateAmount = 0;
+				if(!main1IsLoad)
 					initShopIdDate("main1", shopId, beginTime, endTime);
 				getDataForNum("bar", shopId, beginTime, endTime);
 				break;
@@ -92,7 +110,14 @@ $(function() {
 				$("#week").fadeIn();
 				$("#month").fadeOut();
 				$("#year").fadeOut();
-				if (!main2IsLoad)
+				allMoneyNum = 0;
+				singleExperienceAggregateAmount = 0; // 单次体验
+				discountCoupon = 0; //优惠券
+				internal = 0; //店员开启
+				moreExperience = 0; //不限次数
+				singleExperience = 0;
+				moreExperienceAggregateAmount = 0;
+				if(!main2IsLoad)
 					initShopIdDate("main2", shopId, 0, 0);
 				getDataForNum("bar", shopId, 0, 0);
 				break;
@@ -103,12 +128,19 @@ $(function() {
 				$("#week").fadeOut();
 				$("#month").fadeIn();
 				$("#year").fadeOut();
-				if (!main3IsLoad) {
-					if (1 == parseInt(mon) || 3 == parseInt(mon) || 5 == parseInt(mon) || 7 == parseInt(mon) || 7 == parseInt(mon) ||
+				allMoneyNum = 0;
+				singleExperienceAggregateAmount = 0; // 单次体验
+				discountCoupon = 0; //优惠券
+				internal = 0; //店员开启
+				moreExperience = 0; //不限次数
+				singleExperience = 0;
+				moreExperienceAggregateAmount = 0;
+				if(!main3IsLoad) {
+					if(1 == parseInt(mon) || 3 == parseInt(mon) || 5 == parseInt(mon) || 7 == parseInt(mon) || 7 == parseInt(mon) ||
 						8 == parseInt(mon) || 10 == parseInt(mon) || 12 == parseInt(mon)) {
 						initShopIdDate("main3", shopId, year + "-" + mon + "-01", year + "-" + mon + "-31");
 						getDataForNum("bar", shopId, year + "-" + mon + "-01", year + "-" + mon + "-31");
-					} else if (2 == parseInt(mon)) {
+					} else if(2 == parseInt(mon)) {
 						initShopIdDate("main3", shopId, year + "-" + mon + "-01", year + "-" + mon + "-28");
 						getDataForNum("bar", shopId, year + "-" + mon + "-01", year + "-" + mon + "-28");
 					} else {
@@ -124,7 +156,14 @@ $(function() {
 				$("#week").fadeOut();
 				$("#month").fadeOut();
 				$("#year").fadeIn();
-				if (!main4IsLoad)
+				allMoneyNum = 0;
+				singleExperienceAggregateAmount = 0; // 单次体验
+				discountCoupon = 0; //优惠券
+				internal = 0; //店员开启
+				moreExperience = 0; //不限次数
+				singleExperience = 0;
+				moreExperienceAggregateAmount = 0;
+				if(!main4IsLoad)
 					// initShopIdDate(year + "-" + mon + "-" + date, year + "-" + mon + "-" + date);
 					initShopIdDate("main4", shopId, year + "-01-01", year + "-12-31");
 				getDataForNum("bar", shopId, year + "-01-01", year + "-12-31");
@@ -133,7 +172,7 @@ $(function() {
 				break;
 		}
 	});
-	
+
 	//鼠标悬浮效果
 	$(".seletion li").hover(function() {
 		$(this).addClass("choose1");
@@ -207,7 +246,7 @@ function initBar(myChart, shopId, arrTitle, arrData) {
 function getDataForNum(myChart, shopId, beginTime, endTime) {
 	// var myChart = echarts.init(document.getElementById(idName));
 	// myChart.showLoading();
-	if (typeof(shopId) == "undefined" || shopId == "null") {
+	if(typeof(shopId) == "undefined" || shopId == "null") {
 		shopId = "";
 	}
 	var singleExperienceAggregateAmount = 0;
@@ -235,11 +274,11 @@ function getDataForNum(myChart, shopId, beginTime, endTime) {
 			var i = 0;
 			$.each(data, function(key, value) {
 				console.log(key + "-->" + value);
-				if (value == "[object Object]") {
+				if(value == "[object Object]") {
 					arr = ["王者荣耀,0", "求生之路,0", "独木桥,0", "迷宫,0", "反恐精英,0", "军团要塞,0"];
 					return;
 				}
-				if (key == "status") {
+				if(key == "status") {
 					return;
 				}
 				arr[i] = key + "," + value;
@@ -249,29 +288,29 @@ function getDataForNum(myChart, shopId, beginTime, endTime) {
 			var arrTitle = [];
 			var arrData = [];
 			var html = "";
-			for (var i = 0; i < arr.length; i++) {
+			for(var i = 0; i < arr.length; i++) {
 				console.log(arr[i]);
 				arrTitle[i] = arr[i].split(",")[0];
 				arrData[i] = arr[i].split(",")[1];
-				if (i == 0) {
+				if(i == 0) {
 					html += "<li>" +
 						"<span class='No1 No'>1</span>" +
 						"<p class='gameName'>" + arr[i].split(",")[0] + "</p>" +
 						"<p class='openNumber'><span>" + arr[i].split(",")[1] + "</span>台</p>" +
 						"</li>";
-				} else if (i == 1) {
+				} else if(i == 1) {
 					html += "<li>" +
 						"<span class='No2 No'>2</span>" +
 						"<p class='gameName'>" + arr[i].split(",")[0] + "</p>" +
 						"<p class='openNumber'><span>" + arr[i].split(",")[1] + "</span>台</p>" +
 						"</li>";
-				} else if (i == 2) {
+				} else if(i == 2) {
 					html += "<li>" +
 						"<span class='No3 No'>3</span>" +
 						"<p class='gameName'>" + arr[i].split(",")[0] + "</p>" +
 						"<p class='openNumber'><span>" + arr[i].split(",")[1] + "</span>台</p>" +
 						"</li>";
-				} else if (i == 3 || i == 4 || i == 5) {
+				} else if(i == 3 || i == 4 || i == 5) {
 					html += "<li>" +
 						"<span class='noLast No'>" + (i + 1) + "</span>" +
 						"<p class='gameName'>" + arr[i].split(",")[0] + "</p>" +
@@ -288,17 +327,17 @@ function getDataForNum(myChart, shopId, beginTime, endTime) {
 //冒泡排序
 function bubbleSort(arr) {
 	var exchange;
-	for (var i = arr.length - 1; i > 0; i--) {
+	for(var i = arr.length - 1; i > 0; i--) {
 		exchange = false;
-		for (var j = 0; j < i; j++) {
-			if (parseInt(arr[j].split(",")[1]) < parseInt(arr[j + 1].split(",")[1])) {
+		for(var j = 0; j < i; j++) {
+			if(parseInt(arr[j].split(",")[1]) < parseInt(arr[j + 1].split(",")[1])) {
 				var swap = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = swap;
 				exchange = true;
 			}
 		}
-		if (!exchange) return;
+		if(!exchange) return;
 		console.log(1);
 	}
 
@@ -377,7 +416,6 @@ function init(myChart, idName, singleExperienceAggregateAmount, discountCoupon, 
 
 }
 
-
 //声明所需的全局变量
 var arrMoney = [];
 var allMoneyNum = 0;
@@ -397,13 +435,13 @@ function initShopIdDate(idName, shopId, beginTime, endTime) {
 	// }
 	var myChart = echarts.init(document.getElementById(idName));
 	myChart.showLoading();
-	if(shopId != undefined){
-		getDataForAllMoney(myChart,idName,shopId, beginTime, endTime);
+	if(shopId != undefined) {
+		getDataForAllMoney(myChart, idName, shopId, beginTime, endTime);
 		console.log("测试");
 		return;
 	}
 	console.log(shopId);
-	
+
 	var jsonData = {
 		command: "get_shop_address", // 命令
 		start_item: 0, // 默认从1开始
@@ -419,36 +457,35 @@ function initShopIdDate(idName, shopId, beginTime, endTime) {
 		dataType: "json",
 		data: jsonData,
 		success: function(data) {
-			if (data.status == "succeed") {
+			if(data.status == "succeed") {
 				var sss = "500";
 				console.log(parseInt(sss));
 				var shopData = data.data;
 				var html = "";
-				for (var i = 0; i < shopData.length; i++) {
+				for(var i = 0; i < shopData.length; i++) {
 					// shopData[i].shop_id shopData[i].name
-					html += "<li class='shopNameLi'>"+shopData[i].name+"<input type='hidden' name='shopId' id='shopId' value='"+shopData[i].shop_id+"'></li>";
+					html += "<li class='shopNameLi'>" + shopData[i].name + "<input type='hidden' name='shopId' id='shopId' value='" + shopData[i].shop_id + "'></li>";
 					// console.log(getDataForAllMoney(shopData[i].shop_id, beginTime, endTime));
 					// console.log(arrMoney);
-					
+
 				}
 				$(".select ul").html(html);
-				for (var i = 0; i < shopData.length; i++) {
+				for(var i = 0; i < shopData.length; i++) {
 					// shopData[i].shop_id shopData[i].name
 					// console.log(getDataForAllMoney(shopData[i].shop_id, beginTime, endTime));
-					console.log(beginTime,endTime);
-					getDataForAllMoney(myChart,idName,shopData[i].shop_id, "",beginTime, endTime);
+					console.log(beginTime, endTime);
+					getDataForAllMoney(myChart, idName, shopData[i].shop_id, "", beginTime, endTime);
 					// console.log(arrMoney);
-					
+
 				}
-				
-				
+
 			}
 		}
 	});
 }
 
 //根据店铺ID查询店铺流水并计算所有店铺总流水
-function getDataForAllMoney(myChart,idName,shopId,shopName, beginTime, endTime) {
+function getDataForAllMoney(myChart, idName, shopId, shopName, beginTime, endTime) {
 	var jsonData = {
 		"command": "get_cash", // 命令
 		"shop_id": shopId, // 店铺id 为空时是查询所有
@@ -467,7 +504,7 @@ function getDataForAllMoney(myChart,idName,shopId,shopName, beginTime, endTime) 
 		data: jsonData,
 		success: function(data) {
 			console.log(data);
-			if (data.status == "succeed") {
+			if(data.status == "succeed") {
 				allMoneyNum += parseInt(data.aggregate_amount); // 总金额
 				discountCoupon += parseInt(data.discount_coupon); // 优惠券体验
 				internal += parseInt(data.internal); // 店员
@@ -476,11 +513,11 @@ function getDataForAllMoney(myChart,idName,shopId,shopName, beginTime, endTime) 
 				singleExperience += parseInt(data.single_experience); // 单次体验
 				singleExperienceAggregateAmount += parseInt(data.single_experience_aggregate_amount); // 单次体验金额
 				console.log(allMoneyNum);
-				
+
 				$(".moneyAb").text("￥" + allMoneyNum);
-				
+
 				init(myChart, idName, singleExperienceAggregateAmount, discountCoupon, internal, moreExperience);
-				if (idName == "main1") {
+				if(idName == "main1") {
 					$.cookie("main1Money", allMoneyNum);
 					$("#today .data").find(".data1").eq(0).find(".frequency").text(singleExperience + "次");
 					$("#today .data").find(".data1").eq(0).find(".money").text("￥" + singleExperienceAggregateAmount);
@@ -492,7 +529,7 @@ function getDataForAllMoney(myChart,idName,shopId,shopName, beginTime, endTime) 
 					$("#today .data").find(".data1").eq(3).find(".money").text("￥0");
 					$("#today .moneyAll p:nth-of-type(2)").text("￥" + allMoneyNum);
 					// main1IsLoad = true;
-				} else if (idName == "main2") {
+				} else if(idName == "main2") {
 					$.cookie("main2Money", data.aggregate_amount);
 					$("#week .data").find(".data1").eq(0).find(".frequency").text(singleExperience + "次");
 					$("#week .data").find(".data1").eq(0).find(".money").text("￥" + singleExperienceAggregateAmount);
@@ -504,7 +541,7 @@ function getDataForAllMoney(myChart,idName,shopId,shopName, beginTime, endTime) 
 					$("#week .data").find(".data1").eq(3).find(".money").text("￥0");
 					$("#week .moneyAll p:nth-of-type(2)").text("￥" + allMoneyNum);
 					// main2IsLoad = true;
-				} else if (idName == "main3") {
+				} else if(idName == "main3") {
 					$.cookie("main3Money", data.aggregate_amount);
 					$("#month .data").find(".data1").eq(0).find(".frequency").text(singleExperience + "次");
 					$("#month .data").find(".data1").eq(0).find(".money").text("￥" + singleExperienceAggregateAmount);
@@ -516,7 +553,7 @@ function getDataForAllMoney(myChart,idName,shopId,shopName, beginTime, endTime) 
 					$("#month .data").find(".data1").eq(3).find(".money").text("￥0");
 					$("#month .moneyAll p:nth-of-type(2)").text("￥" + allMoneyNum);
 					// main3IsLoad = true;
-				} else if (idName == "main4") {
+				} else if(idName == "main4") {
 					$.cookie("main4Money", data.aggregate_amount);
 					$("#year .data").find(".data1").eq(0).find(".frequency").text(singleExperience + "次");
 					$("#year .data").find(".data1").eq(0).find(".money").text("￥" + singleExperienceAggregateAmount);
@@ -534,11 +571,9 @@ function getDataForAllMoney(myChart,idName,shopId,shopName, beginTime, endTime) 
 	});
 }
 
-
-
 function lineHide(opt) {
 	jQuery.each(opt.data, function(i, item) {
-		if (parseInt(item.value) < 100) {
+		if(parseInt(item.value) < 100) {
 			item.labelLine.show = false;
 			item.label.show = false;
 		}
