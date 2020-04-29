@@ -435,7 +435,8 @@ function initShopIdDate(idName, shopId, beginTime, endTime) {
 				for (var i = 0; i < shopData.length; i++) {
 					// shopData[i].shop_id shopData[i].name
 					// console.log(getDataForAllMoney(shopData[i].shop_id, beginTime, endTime));
-					getDataForAllMoney(myChart,idName,shopData[i].shop_id, beginTime, endTime);
+					console.log(beginTime,endTime);
+					getDataForAllMoney(myChart,idName,shopData[i].shop_id, "",beginTime, endTime);
 					// console.log(arrMoney);
 					
 				}
@@ -452,9 +453,9 @@ function getDataForAllMoney(myChart,idName,shopId,shopName, beginTime, endTime) 
 		"command": "get_cash", // 命令
 		"shop_id": shopId, // 店铺id 为空时是查询所有
 		"start_time": beginTime, // 开始时间
-		"end_time": endTime, // 结束时间
+		"end_time": endTime // 结束时间
 	};
-	console.log(shopId);
+	console.log(jsonData);
 	jsonData = JSON.stringify(jsonData);
 	// console.log(jsonData);
 	$.ajax({
