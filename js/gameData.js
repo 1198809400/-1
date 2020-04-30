@@ -4,7 +4,7 @@ var endTime = 0;
 var num = 0;
 var firstNum = 0;
 $(function() {
-	$.cookie("shopId", "");
+	$.cookie("shopId", undefined);
 	var myDate = new Date;
 	var year = myDate.getFullYear(); //获取当前年
 	var mon = myDate.getMonth() + 1; //获取当前月
@@ -235,7 +235,7 @@ function initDate(beginNum, endNum, startTime, endTime) {
 		firstNum = 1;
 	}
 	var shopId = "";
-	if ($.cookie("personShopId") != "" || $.cookie("shopId") != null) {
+	if ($.cookie("shopId") != undefined) {
 		shopId = $.cookie("shopId");
 		console.log(shopId);
 	}
