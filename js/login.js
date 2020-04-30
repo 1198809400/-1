@@ -46,7 +46,6 @@ function login(userName,password,isAutoLogin){
 					$.cookie("rolePerson","1");
 					$.cookie("personShopId",undefined);
 					window.location.href = "index1.html";
-					
 				}else if(data.data[0].result == 2){
 					$.cookie("rolePerson","2");
 					$.cookie("personShopId",undefined);

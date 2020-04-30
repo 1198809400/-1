@@ -10,7 +10,8 @@ $(function() {
 	var mon = myDate.getMonth() + 1; //获取当前月
 	var date = myDate.getDate(); //获取当前日
 	//声明shopId变量
-	var shopId = "";
+	var shopId = undefined;
+	$.cookie('shopId',undefined);
 	//鼠标悬浮效果
 	$(document).on("mouseover", ".shopNameLi", function() {
 		// alert(1);
@@ -52,7 +53,6 @@ $(function() {
 		initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + date);
 		getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + date);
 	});
-
 	//获取shopId并判断
 	if($.cookie("personShopId") != "" || $.cookie("personShopId") != null || $.cookie("personShopId") != undefined) {
 		shopId = $.cookie("personShopId");
@@ -565,8 +565,9 @@ function initShopIdDate(idName, shopId, beginTime, endTime) {
 	// }
 	var myChart = echarts.init(document.getElementById(idName));
 	myChart.showLoading();
-	if(shopId != undefined) {
-		getDataForAllMoney(myChart, idName, shopId, beginTime, endTime);
+	if($.cookie("shopId") != undefined) {
+		console.log(shopId);
+		getDataForAllMoney(myChart, idName, shopId,"", beginTime, endTime);
 		console.log("测试");
 		return;
 	}

@@ -8,6 +8,7 @@ function getData() {
 	var page = $.cookie("page");
 	var beginNum = $.cookie("beginNum");
 	var endNum = $.cookie("endNum");
+	var shopId = "";
 	var startTime = 0;
 	var lastTime = 0;
 	if ($("#beginTime").val() == "" || $("#beginTime").val() == null) {
@@ -18,6 +19,9 @@ function getData() {
 		lastTime = 0;
 		return;
 	}
+	if($.cookie("shopId") != undefined){
+		shopId = $.cookie("shopId");
+	}
 	startTime = $("#beginTime").val();
 	lastTime = $("#endTime").val();
 	if (startTime != 0 && lastTime != 0) {
@@ -25,8 +29,10 @@ function getData() {
 		$(".checkDay li").removeClass("choose");
 		$(".checkDay li").eq(0).addClass("choose");
 		if(page == "game"){
-			getDataForMoney("main1", "", startTime, lastTime);
-			getDataForNum("bar", "", startTime, lastTime);
+			initShopIdDate("main1", shopId, startTime, lastTime);
+			getDataForNum("bar", shopId, startTime, lastTime);
+			$(".checkDay li").removeClass("hoverli");
+			$(".checkDay li").eq(0).addClass("hoverli");
 		}else{
 			initDate(beginNum, endNum, startTime, lastTime);
 		}
