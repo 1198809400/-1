@@ -36,7 +36,7 @@ function getData() {
 		}else{
 			initDate(beginNum, endNum, startTime, lastTime);
 		}
-		
+		$(".checkDay li").removeClass("hoverli");
 		
 		isPageLoad = false;
 		$("#pageNumber").html("");
