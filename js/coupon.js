@@ -38,7 +38,7 @@ function addCoupon(startTime,endTime,class1) {
 		"end_time": endTime,	//有效时间
 		"class": class1, //等级
 		"type": "1", //类型
-		"hand_out_people": $.cookie("userName"); //发放人
+		"hand_out_people": $.cookie("userName") //发放人
 	};
 	jsonData = JSON.stringify(jsonData);
 	console.log(jsonData);
