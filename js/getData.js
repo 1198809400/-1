@@ -49,10 +49,10 @@ function parseURL(url){
 			$.cookie("proText",value);
 		}else if(i == 10){
 			var value = data.split("=")[1];
-			$("#longitude").val(parseInt(value));
+			$("#longitude").val(value);
 		}else if(i == 11){
 			var value = data.split("=")[1];
-			$("#latitude").val(parseInt(value));
+			$("#latitude").val(value);
 		}else if(i == 5){
 			var value = data.split("=")[1];
 			$("#detailedAddress").val(value);
