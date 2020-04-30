@@ -13,11 +13,9 @@ $(function() {
 	
 	//点击删除图标时
 	$(document).on("click", ".deleteShop", function() {
-		// console.log(1);
 		if (confirm("确定删除该游戏?")) {
 			var gameName = $(this).parent("td").parent("tr").find("td").eq(1).text();
 		
-			console.log(gameName);
 			deleteGame(gameName);
 		}
 		// deleteGame(gameName);
@@ -28,7 +26,7 @@ $(function() {
 	});
 	//点击修改图标时
 	$(document).on("click", ".editShop", function() {
-		// console.log(1);
+		$("#gameName").attr("disabled","disabled");
 		$("#popup").css("display", "block");
 		$("#mask").css("display", "block");
 		var gameName = $(this).parent("td").parent("tr").find("td").eq(1).text();
@@ -41,7 +39,6 @@ $(function() {
 	//当上传文件框变化时
 	$("#upFileInput").change(function() {
 		run(this, function(data) {
-			console.log(data.split(",")[1]);
 			$("#base64").val(data.split(",")[1]);
 		});
 	});
@@ -97,7 +94,6 @@ function addGame(name, type, img) {
 		back_group_image: img // 游戏图片 要求:[base64格式，不带格式头（如：data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABVYAAAMACAIAAABAXKuVAAAAAXNSR0IArs4c6QAAAARnQU...，去掉前面的“data:image/png;base64,”），图片base64编码后小于30k]
 	};
 	jsonData = JSON.stringify(jsonData);
-	console.log(jsonData);
 	$.ajax({
 		url: "http://step.nihaofuture.cn",
 		type: "post",
@@ -106,7 +102,6 @@ function addGame(name, type, img) {
 		// maxPostSize
 		data: jsonData,
 		success: function(data) {
-			console.log(data);
 			if (data.status == "succeed") {
 				alert("操作成功");
 
@@ -132,7 +127,6 @@ function deleteGame(gameName) {
 		dataType: "json",
 		data: jsonData,
 		success: function(data) {
-			console.log(data);
 			if (data.status == "succeed") {
 				alert("删除成功");
 				window.location.reload();
@@ -147,7 +141,6 @@ function initDate(beginNum, endNum) {
 		command: "games", // 命令
 	};
 	jsonData = JSON.stringify(jsonData);
-	console.log(jsonData);
 	$.ajax({
 		url: "http://step.nihaofuture.cn",
 		type: "post",
@@ -156,7 +149,6 @@ function initDate(beginNum, endNum) {
 		data: jsonData,
 		success: function(data) {
 			var shopData = data.data;
-			console.log(data.data);
 			var inHtml = "";
 			var showEndNum = 0;
 			for (var i = 0; i < shopData.length; i++) {
@@ -168,7 +160,6 @@ function initDate(beginNum, endNum) {
 				} else {
 					inHtml += "<td class='tableStyle_td_address'>" + shopData[i].type + "</td>";
 				}
-				console.log(shopData[i].introduction);
 				inHtml +="<td>" + shopData[i].performance_display_mode + "</td>" ;
 				if(shopData[i].introduction != "" || shopData[i].introduction != null){
 					inHtml +="<td><img src='data:image/png;base64," + shopData[i].introduction + "'/></td>" ;
@@ -188,7 +179,6 @@ function initDate(beginNum, endNum) {
 					"</td></tr>";
 				showEndNum = num + i;
 			}
-			// var tNumber = data.total_items;
 			var cNumber = data.current_items;
 			$("tbody").html(inHtml);
 			if (!isPageInit) {
@@ -199,7 +189,6 @@ function initDate(beginNum, endNum) {
 			$(".dataText p .end").text(showEndNum);
 			$(".dataText p .allNumber").text(showEndNum);
 			var height1 = $("#middleFunction").height();
-			console.log(height1);
 			$("#leftMenu").height(parseInt(height1) + 24);
 		}
 	});
@@ -215,7 +204,6 @@ function initPage(tNumber, endNum) {
 		pageCurrent: 1, //  当前页
 		maxBtnNum: 9, // 最多按钮个数  （最少5个）
 		change: function(e) { // 页数变化回调函数（返回当前页码）
-			console.log("当前页数：" + e);
 			var begin = (e - 1) * endNum;
 			initDate(begin, endNum);
 		},
