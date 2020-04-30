@@ -26,13 +26,9 @@ function getData() {
 	lastTime = $("#endTime").val();
 	if (startTime != 0 && lastTime != 0) {
 		console.log("time:" + startTime + "--" + lastTime);
-		$(".checkDay li").removeClass("choose");
-		$(".checkDay li").eq(0).addClass("choose");
 		if(page == "game"){
 			initShopIdDate("main1", shopId, startTime, lastTime);
 			getDataForNum("bar", shopId, startTime, lastTime);
-			$(".checkDay li").removeClass("hoverli");
-			$(".checkDay li").eq(0).addClass("hoverli");
 		}else{
 			initDate(beginNum, endNum, startTime, lastTime);
 		}
