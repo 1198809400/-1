@@ -4,7 +4,7 @@ var endTime = 0;
 var num = 0;
 var firstNum = 0;
 $(function() {
-	$.cookie("shopId","");
+	$.cookie("shopId", "");
 	var myDate = new Date;
 	var year = myDate.getFullYear(); //获取当前年
 	var mon = myDate.getMonth() + 1; //获取当前月
@@ -14,8 +14,51 @@ $(function() {
 	$.cookie("beginNum", beginNum);
 	$.cookie("endNum", endNum);
 	var lastTime = 0;
-	startTime = year + "-" + mon + "-" + date;
-	initDate(beginNum, endNum, startTime, startTime);
+	if(1 == parseInt(mon) || 3 == parseInt(mon) || 5 == parseInt(mon) || 7 == parseInt(mon)  ||
+		8 == parseInt(mon) || 10 == parseInt(mon) || 12 == parseInt(mon)) {
+			if(date == 31 && mon != 12){
+				startTime = year + "-" + mon + "-" + date;
+				endTime = year + "-" + (mon+1) + "-01";
+			}else if(date != 31 && mon != 12){
+				startTime = year + "-" + mon + "-" + date;
+				endTime = year + "-" + mon + "-" + (date+1);
+			}else if(date == 31 && mon == 12){
+				startTime = year + "-" + mon + "-" + date;
+				endTime = (year + 1) + "-01-01";
+			}else{
+				startTime = year + "-" + mon + "-" + date;
+				endTime = year + "-" + (mon+1) + "-01";
+			}
+		
+	} else if(2 == parseInt(mon)) {
+		if(year % 4 == 0){
+			if(date == 29){
+				startTime = year + "-" + mon + "-" + date;
+				endTime = year + "-" + (mon+1) + "-01";
+			}else{
+				startTime = year + "-" + mon + "-" + date;
+				endTime = year + "-" + mon + "-" + (date+1);
+			}
+		}else{
+			if(date == 28){
+				startTime = year + "-" + mon + "-" + date;
+				endTime = year + "-" + (mon+1) + "-01";
+			}else{
+				startTime = year + "-" + mon + "-" + date;
+				endTime = year + "-" + mon + "-" + (date+1);
+			}
+		}
+		
+	} else {
+		if(date == 30){
+			startTime = year + "-" + mon + "-" + date;
+			endTime = year + "-" + (mon+1) + "-01";
+		}else{
+			startTime = year + "-" + mon + "-" + date;
+			endTime = year + "-" + mon + "-" + (date+1);
+		}
+	}
+	initDate(beginNum, endNum, startTime, endTime);
 	queryShopId();
 	//鼠标悬浮效果
 	$(".checkDay li").hover(function() {
@@ -24,39 +67,39 @@ $(function() {
 		$(this).removeClass("hoverli1");
 	});
 	//鼠标悬浮效果
-	$(document).on("mouseover",".shopNameLi",function(){
+	$(document).on("mouseover", ".shopNameLi", function() {
 		// alert(1);
-		$(this).css("background","#E7F8FD");
+		$(this).css("background", "#E7F8FD");
 	});
 	//鼠标悬浮效果
-	$(document).on("mouseout",".shopNameLi",function(){
+	$(document).on("mouseout", ".shopNameLi", function() {
 		// alert(1);
-		$(this).css("background","#FFFFFF");
+		$(this).css("background", "#FFFFFF");
 	});
-	
+
 	//当点击输入框时
-	$("#searchShopInput").click(function(event){
+	$("#searchShopInput").click(function(event) {
 		event.stopPropagation();
-		if($(".select").css("display") == 'none'){
-			$(".select").css("display","block");
-		}else{
-			$(".select").css("display","none");
+		if ($(".select").css("display") == 'none') {
+			$(".select").css("display", "block");
+		} else {
+			$(".select").css("display", "none");
 		}
 	});
 	//点击店铺列表时
-	$(document).on("click",".shopNameLi",function(){
+	$(document).on("click", ".shopNameLi", function() {
 		console.log($(this).text());
 		$("#searchShopInput").val($(this).text());
 		shopId = $(this).find("#shopId").val();
 		console.log(shopId);
-		$.cookie("shopId",shopId);
+		$.cookie("shopId", shopId);
 		initDate(beginNum, endNum, startTime, startTime);
 		$(".checkDay li").removeClass("hoverli");
 		$(".checkDay li").eq(0).addClass("hoverli");
 	});
 	//点击网页时
 	$(document).click(function() {
-		$(".select").css("display","none");
+		$(".select").css("display", "none");
 	});
 	//点击不同日期进行查询
 	$(".checkDay li").click(function() {
@@ -67,42 +110,87 @@ $(function() {
 		$(".checkDay li").eq(index).addClass("hoverli");
 		switch (text) {
 			case "今日":
-				startTime = year + "-" + mon + "-" + date;
-				endTime = year + "-" + mon + "-" + date;
+				if(1 == parseInt(mon) || 3 == parseInt(mon) || 5 == parseInt(mon) || 7 == parseInt(mon)  ||
+					8 == parseInt(mon) || 10 == parseInt(mon) || 12 == parseInt(mon)) {
+						if(date == 31 && mon != 12){
+							startTime = year + "-" + mon + "-" + date;
+							endTime = year + "-" + (mon+1) + "-01";
+						}else if(date != 31 && mon != 12){
+							startTime = year + "-" + mon + "-" + date;
+							endTime = year + "-" + mon + "-" + (date+1);
+						}else if(date == 31 && mon == 12){
+							startTime = year + "-" + mon + "-" + date;
+							endTime = (year + 1) + "-01-01";
+						}else{
+							startTime = year + "-" + mon + "-" + date;
+							endTime = year + "-" + (mon+1) + "-01";
+						}
+					
+				} else if(2 == parseInt(mon)) {
+					if(year % 4 == 0){
+						if(date == 29){
+							startTime = year + "-" + mon + "-" + date;
+							endTime = year + "-" + (mon+1) + "-01";
+						}else{
+							startTime = year + "-" + mon + "-" + date;
+							endTime = year + "-" + mon + "-" + (date+1);
+						}
+					}else{
+						if(date == 28){
+							startTime = year + "-" + mon + "-" + date;
+							endTime = year + "-" + (mon+1) + "-01";
+						}else{
+							startTime = year + "-" + mon + "-" + date;
+							endTime = year + "-" + mon + "-" + (date+1);
+						}
+					}
+					
+				} else {
+					if(date == 30){
+						startTime = year + "-" + mon + "-" + date;
+						endTime = year + "-" + (mon+1) + "-01";
+					}else{
+						startTime = year + "-" + mon + "-" + date;
+						endTime = year + "-" + mon + "-" + (date+1);
+					}
+				}
 				initDate(beginNum, endNum, startTime, startTime);
 				isPageLoad = false;
 				$("#pageNumber").html("");
 				break;
 			case "本周":
-
+				var arr = getWeekDay(year + "-" + mon + "-" + date);
+				initDate(beginNum, endNum, arr[0], arr[6]);
+				isPageLoad = false;
+				$("#pageNumber").html("");
 				break;
 			case "本月":
-
 				if (1 == parseInt(mon) || 3 == parseInt(mon) || 5 == parseInt(mon) || 7 == parseInt(mon) || 7 == parseInt(mon) ||
 					8 == parseInt(mon) || 10 == parseInt(mon) || 12 == parseInt(mon)) {
-					console.log(11);
-					startTime = year + "-" + mon + "-01";
-					endTime = year + "-" + mon + "-31";
-					initDate(beginNum, endNum, startTime, endTime);
+					initDate(beginNum, endNum, year + "-" + mon + "-01", year + "-" + (mon + 1) + "-01");
 					isPageLoad = false;
 					$("#pageNumber").html("");
 				} else if (2 == parseInt(mon)) {
-					startTime = year + "-" + mon + "-01";
-					endTime = year + "-" + mon + "-28";
-					initDate(beginNum, endNum, startTime, endTime);
-					isPageLoad = false;
-					$("#pageNumber").html("");
+					if (year % 4 == 0) {
+						initDate(beginNum, endNum, year + "-" + mon + "-01", year + "-" + (mon + 1) + "-01");
+						isPageLoad = false;
+						$("#pageNumber").html("");
+					} else {
+						initDate(beginNum, endNum, year + "-" + mon + "-01", year + "-" + (mon + 1) + "-01");
+						isPageLoad = false;
+						$("#pageNumber").html("");
+					}
+
 				} else {
-					startTime = year + "-" + mon + "-01";
-					endTime = year + "-" + mon + "-30";
-					initDate(beginNum, endNum, startTime, endTime);
+					initDate(beginNum, endNum, year + "-" + mon + "-01", year + "-" + (mon + 1) + "-01");
 					isPageLoad = false;
 					$("#pageNumber").html("");
 				}
+				
 				break;
 			case "全年":
 				startTime = year + "-01-01";
-				endTime = year + "-12-31";
+				endTime = (year+1)+ "-01-01";
 				initDate(beginNum, endNum, startTime, endTime);
 				isPageLoad = false;
 				$("#pageNumber").html("");
@@ -112,7 +200,8 @@ $(function() {
 		}
 	});
 });
-function queryShopId(){
+
+function queryShopId() {
 	var jsonData = {
 		command: "get_shop_address", // 命令
 		start_item: 0, // 默认从1开始
@@ -131,7 +220,8 @@ function queryShopId(){
 				var shopData = data.data;
 				var html = "";
 				for (var i = 0; i < shopData.length; i++) {
-					html += "<li class='shopNameLi'>"+shopData[i].name+"<input type='hidden' name='shopId' id='shopId' value='"+shopData[i].shop_id+"'></li>";
+					html += "<li class='shopNameLi'>" + shopData[i].name + "<input type='hidden' name='shopId' id='shopId' value='" +
+						shopData[i].shop_id + "'></li>";
 				}
 				$(".select ul").html(html);
 			}
@@ -145,7 +235,7 @@ function initDate(beginNum, endNum, startTime, endTime) {
 		firstNum = 1;
 	}
 	var shopId = "";
-	if($.cookie("personShopId") != "" ||$.cookie("shopId") != null ){
+	if ($.cookie("personShopId") != "" || $.cookie("shopId") != null) {
 		shopId = $.cookie("shopId");
 		console.log(shopId);
 	}
@@ -177,7 +267,7 @@ function initDate(beginNum, endNum, startTime, endTime) {
 			// for (var i = shopData.length - 1; i >= 0; i--) {
 			console.log("showEndNum:-----" + showEndNum);
 			for (var i = 0; i < shopData.length; i++) {
-				
+
 				inHtml += "<tr><td>" + firstNum + "</td>";
 				inHtml += "<td>" + shopData[i].game_name + "</td>" +
 					"<td>" + shopData[i].round_id + "</td>" +
@@ -233,4 +323,24 @@ function initPage(tNumber, endNum, startTime, endTime) {
 			initDate(beginNum, endNum, startTime, endTime);
 		},
 	});
+}
+
+function getWeekDay(dateString) {
+	let dateStringReg = /^\d{4}[/-]\d{1,2}[/-]\d{1,2}$/;
+
+	if (dateString.match(dateStringReg)) {
+		let presentDate = new Date(dateString),
+			today = presentDate.getDay() !== 0 ? presentDate.getDay() : 7;
+
+		return Array.from(new Array(7), function(val, index) {
+			return formatDate(new Date(presentDate.getTime() - (today - index - 1) * 24 * 60 * 60 * 1000));
+		});
+
+	} else {
+		throw new Error('dateString should be like "yyyy-mm-dd" or "yyyy/mm/dd"');
+	}
+
+	function formatDate(date) {
+		return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+	}
 }

@@ -65,10 +65,71 @@ $(function() {
 	moreExperience = 0; //不限次数
 	singleExperience = 0;
 	moreExperienceAggregateAmount = 0;
-	//调用游戏开启次数函数
-	getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + date);
-	//调用店铺流水函数
-	initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + date);
+	if(1 == parseInt(mon) || 3 == parseInt(mon) || 5 == parseInt(mon) || 7 == parseInt(mon)  ||
+		8 == parseInt(mon) || 10 == parseInt(mon) || 12 == parseInt(mon)) {
+			if(date == 31 && mon != 12){
+				//调用游戏开启次数函数
+				getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+				//调用店铺流水函数
+				initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+			}else if(date != 31 && mon != 12){
+				//调用游戏开启次数函数
+				getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+				//调用店铺流水函数
+				initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+			}else if(date == 31 && mon == 12){
+				//调用游戏开启次数函数
+				getDataForNum("bar", shopId, year + "-" + mon + "-" + date, (year + 1) + "-01-01");
+				//调用店铺流水函数
+				initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, (year + 1)+ "-01-01");
+			}else{
+				//调用游戏开启次数函数
+				getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+				//调用店铺流水函数
+				initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+			}
+		
+	} else if(2 == parseInt(mon)) {
+		if(year % 4 == 0){
+			if(date == 29){
+				//调用游戏开启次数函数
+				getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+				//调用店铺流水函数
+				initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+			}else{
+				//调用游戏开启次数函数
+				getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+				//调用店铺流水函数
+				initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+			}
+		}else{
+			if(date == 28){
+				//调用游戏开启次数函数
+				getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+				//调用店铺流水函数
+				initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+			}else{
+				//调用游戏开启次数函数
+				getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+				//调用店铺流水函数
+				initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+			}
+		}
+		
+	} else {
+		if(date == 30){
+			//调用游戏开启次数函数
+			getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+			//调用店铺流水函数
+			initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+		}else{
+			//调用游戏开启次数函数
+			getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+			//调用店铺流水函数
+			initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+		}
+	}
+	
 	$("#today").fadeIn();
 	$("#week").fadeOut();
 	$("#month").fadeOut();
@@ -84,7 +145,7 @@ $(function() {
 		switch(text) {
 			case "今日":
 				beginTime = year + "-" + mon + "-" + date;
-				endTime = year + "-" + mon + "-" + date;
+				endTime = year + "-" + mon + "-" + (date+1);
 				$(".moneyAb").text("￥" + $.cookie("main1Money"));
 				$(".moneyAll p:nth-of-type(2)").text("￥" + $.cookie("main1Money"));
 				$("#today").fadeIn();
@@ -99,9 +160,70 @@ $(function() {
 				moreExperience = 0; //不限次数
 				singleExperience = 0;
 				moreExperienceAggregateAmount = 0;
-				if(!main1IsLoad)
-					initShopIdDate("main1", shopId, beginTime, endTime);
-				getDataForNum("bar", shopId, beginTime, endTime);
+				if(1 == parseInt(mon) || 3 == parseInt(mon) || 5 == parseInt(mon) || 7 == parseInt(mon)  ||
+					8 == parseInt(mon) || 10 == parseInt(mon) || 12 == parseInt(mon)) {
+						if(date == 31 && mon != 12){
+							//调用游戏开启次数函数
+							getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+							//调用店铺流水函数
+							initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+						}else if(date != 31 && mon != 12){
+							//调用游戏开启次数函数
+							getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+							//调用店铺流水函数
+							initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+						}else if(date == 31 && mon == 12){
+							//调用游戏开启次数函数
+							getDataForNum("bar", shopId, year + "-" + mon + "-" + date, (year + 1) + "-01-01");
+							//调用店铺流水函数
+							initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, (year + 1)+ "-01-01");
+						}else{
+							//调用游戏开启次数函数
+							getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+							//调用店铺流水函数
+							initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+						}
+					
+				} else if(2 == parseInt(mon)) {
+					if(year % 4 == 0){
+						if(date == 29){
+							//调用游戏开启次数函数
+							getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+							//调用店铺流水函数
+							initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+						}else{
+							//调用游戏开启次数函数
+							getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+							//调用店铺流水函数
+							initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+						}
+					}else{
+						if(date == 28){
+							//调用游戏开启次数函数
+							getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+							//调用店铺流水函数
+							initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+						}else{
+							//调用游戏开启次数函数
+							getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+							//调用店铺流水函数
+							initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+						}
+					}
+					
+				} else {
+					if(date == 30){
+						//调用游戏开启次数函数
+						getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+						//调用店铺流水函数
+						initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + (mon+1) + "-01");
+					}else{
+						//调用游戏开启次数函数
+						getDataForNum("bar", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+						//调用店铺流水函数
+						initShopIdDate("main1", shopId, year + "-" + mon + "-" + date, year + "-" + mon + "-" + (date+1));
+					}
+				}
 				break;
 			case "本周":
 				$(".moneyAb").text("￥" + $.cookie("main2Money"));
@@ -117,9 +239,11 @@ $(function() {
 				moreExperience = 0; //不限次数
 				singleExperience = 0;
 				moreExperienceAggregateAmount = 0;
+				var arr = getWeekDay(year + "-" + mon + "-" + date);
+				console.log(arr);
 				if(!main2IsLoad)
-					initShopIdDate("main2", shopId, 0, 0);
-				getDataForNum("bar", shopId, 0, 0);
+					initShopIdDate("main2", shopId, arr[0], arr[6]);
+				getDataForNum("bar", shopId, arr[0], arr[6]);
 				break;
 			case "本月":
 				$(".moneyAb").text("￥" + $.cookie("main3Money"));
@@ -138,14 +262,20 @@ $(function() {
 				if(!main3IsLoad) {
 					if(1 == parseInt(mon) || 3 == parseInt(mon) || 5 == parseInt(mon) || 7 == parseInt(mon) || 7 == parseInt(mon) ||
 						8 == parseInt(mon) || 10 == parseInt(mon) || 12 == parseInt(mon)) {
-						initShopIdDate("main3", shopId, year + "-" + mon + "-01", year + "-" + mon + "-31");
-						getDataForNum("bar", shopId, year + "-" + mon + "-01", year + "-" + mon + "-31");
+						initShopIdDate("main3", shopId, year + "-" + mon + "-01",  year + "-" + (mon+1)+ "-01");
+						getDataForNum("bar", shopId, year + "-" + mon + "-01",  year + "-" + (mon+1)+ "-01");
 					} else if(2 == parseInt(mon)) {
-						initShopIdDate("main3", shopId, year + "-" + mon + "-01", year + "-" + mon + "-28");
-						getDataForNum("bar", shopId, year + "-" + mon + "-01", year + "-" + mon + "-28");
+						if(year % 4 == 0){
+							initShopIdDate("main3", shopId, year + "-" + mon + "-01", year + "-" + (mon+1)+ "-01");
+							getDataForNum("bar", shopId, year + "-" + mon + "-01",  year + "-" + (mon+1)+ "-01");
+						}else{
+							initShopIdDate("main3", shopId, year + "-" + mon + "-01",  year + "-" + (mon+1)+ "-01");
+							getDataForNum("bar", shopId, year + "-" + mon + "-01",  year + "-" + (mon+1)+ "-01");
+						}
+						
 					} else {
-						initShopIdDate("main3", shopId, year + "-" + mon + "-01", year + "-" + mon + "-30");
-						getDataForNum("bar", shopId, year + "-" + mon + "-01", year + "-" + mon + "-30");
+						initShopIdDate("main3", shopId, year + "-" + mon + "-01", year + "-" + (mon+1)+ "-01");
+						getDataForNum("bar", shopId, year + "-" + mon + "-01", year + "-" + (mon+1)+ "-01");
 					}
 				}
 				break;
@@ -165,8 +295,8 @@ $(function() {
 				moreExperienceAggregateAmount = 0;
 				if(!main4IsLoad)
 					// initShopIdDate(year + "-" + mon + "-" + date, year + "-" + mon + "-" + date);
-					initShopIdDate("main4", shopId, year + "-01-01", year + "-12-31");
-				getDataForNum("bar", shopId, year + "-01-01", year + "-12-31");
+					initShopIdDate("main4", shopId, year + "-01-01", (year+1)+ "-01-01");
+				getDataForNum("bar", shopId, year + "-01-01", (year+1) + "-01-01");
 				break;
 			default:
 				break;
@@ -578,4 +708,23 @@ function lineHide(opt) {
 			item.label.show = false;
 		}
 	});
+}
+function getWeekDay(dateString) {
+    let dateStringReg = /^\d{4}[/-]\d{1,2}[/-]\d{1,2}$/;
+ 
+    if (dateString.match(dateStringReg)) {
+        let presentDate = new Date(dateString),
+            today = presentDate.getDay() !== 0 ? presentDate.getDay() : 7;
+ 
+        return Array.from(new Array(7), function(val, index) {
+            return formatDate(new Date(presentDate.getTime() - (today - index-1) * 24 * 60 * 60 * 1000));
+        });
+ 
+    } else {
+        throw new Error('dateString should be like "yyyy-mm-dd" or "yyyy/mm/dd"');
+    }
+ 
+    function formatDate(date) {
+        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    }
 }
