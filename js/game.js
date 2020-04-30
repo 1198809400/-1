@@ -43,6 +43,7 @@ $(function() {
 		$("#searchShopInput").val($(this).text());
 		shopId = $(this).find("#shopId").val();
 		console.log(shopId);
+		$.cookie("shopId",shopId);
 		allMoneyNum = 0;
 		singleExperienceAggregateAmount = 0; // 单次体验
 		discountCoupon = 0; //优惠券
