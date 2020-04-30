@@ -27,13 +27,17 @@ function getData() {
 	if (startTime != 0 && lastTime != 0) {
 		console.log("time:" + startTime + "--" + lastTime);
 		if(page == "game"){
+			$(".checkDay li").removeClass("hoverli");
+			$(".changeData li").removeClass("choose");
 			initShopIdDate("main1", shopId, startTime, lastTime);
 			getDataForNum("bar", shopId, startTime, lastTime);
 		}else{
+			$(".checkDay li").removeClass("hoverli");
+			$(".changeData li").removeClass("choose");
 			initDate(beginNum, endNum, startTime, lastTime);
 		}
 		$(".checkDay li").removeClass("hoverli");
-		$(".checkDay li").removeClass("choose");
+		$(".changeData li").removeClass("choose");
 		
 		isPageLoad = false;
 		$("#pageNumber").html("");
