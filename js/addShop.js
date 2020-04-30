@@ -42,9 +42,13 @@ function queryPerson(shopId) {
 			if($.cookie("look") == "look"){
 				$(".editShop").css("display","none");
 				$(".deleteShop").css("display","none");
+				$("#tableDiv").find("th").eq(7).text("");
+				$("#tableDiv2").find("th").eq(5).text("");
 			}else{
 				$(".editShop").css("display","block");
 				$(".deleteShop").css("display","block");
+				$("#tableDiv").find("th").eq(7).text("操作");
+				$("#tableDiv2").find("th").eq(5).text("操作");
 			}
 			var tNumber = data.total_items;
 			console.log(tNumber);

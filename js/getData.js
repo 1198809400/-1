@@ -9,7 +9,7 @@ function parseURL(url){
 	if(typeof(url1)=="undefined"){
 		$.removeCookie("shopId");
 		// $.removeCookie("personShopId");
-		
+		$.cookie("look","add");
 		// $("#middleFunction").css("display","none");
 		return;
 	}
