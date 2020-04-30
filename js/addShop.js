@@ -651,6 +651,7 @@ $(function() {
 					alert("添加成功");
 					$("#popup").css("display", "none");
 					$("#mask").css("display", "none");
+					queryPerson($.cookie("shopId"));
 				}
 			}
 		});
