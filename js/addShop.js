@@ -39,6 +39,13 @@ function queryPerson(shopId) {
 
 			}
 			$("#tableDiv tbody").html(inHtml);
+			if($.cookie("look") == "look"){
+				$(".editShop").css("display","none");
+				$(".deleteShop").css("display","none");
+			}else{
+				$(".editShop").css("display","block");
+				$(".deleteShop").css("display","block");
+			}
 			var tNumber = data.total_items;
 			console.log(tNumber);
 			// if (!eleBool) {
@@ -92,6 +99,13 @@ function queryDevice(beginNum, endNum) {
 
 			}
 			$("#tableDiv2 tbody").html(inHtml);
+			if($.cookie("look") == "look"){
+				$(".editShop").css("display","none");
+				$(".deleteShop").css("display","none");
+			}else{
+				$(".editShop").css("display","block");
+				$(".deleteShop").css("display","block");
+			}
 			var tNumber = data.total_items;
 			console.log(tNumber);
 			if(!eleBool) {

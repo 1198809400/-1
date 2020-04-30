@@ -16,12 +16,18 @@ function parseURL(url){
 	url1 = decodeURI(decodeURI(location.search));
 	var dataArr = url1.split("&");
 	var look = dataArr[0].split("=")[1];
-	if(look == "look"){
+	if(look == "look"){ 
+		$.cookie("look","look");
 		$("input").attr("disabled","disabled");
 		$(".buttonBackColor_Blue").css("display","none");
+		$(".editShop").css("display","none");
+		$(".deleteShop").css("display","none");
 	}else{
+		$.cookie("look","change");
 		$("input").removeAttr("disabled");
 		$(".buttonBackColor_Blue").css("display","block");
+		$(".editShop").css("display","block");
+		$(".deleteShop").css("display","block");
 	}
 	$.cookie("isPhoneRight","true");
 	for(var i = 0;i<dataArr.length;i++){
