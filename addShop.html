@@ -366,7 +366,7 @@
 				</div>
 				<div class="searchInput" id="searchShopDiv">
 					<p class="shopNameFont">店铺名</p>
-					<input type="text" id="searchShopInput" class="inputText" placeholder="请输入店铺名称 如：北京1店" maxlength="20" />
+					<input type="text" id="searchShopInput" autocomplete="off" class="inputText" placeholder="请输入店铺名称 如：北京1店" maxlength="20" />
 				</div>
 				<div class="searchInput" id="searchAddressDiv">
 					<p class="shopNameFont">店铺地址</p>
@@ -386,8 +386,8 @@
 						</div>
 					</div>
 					<!-- <input type="text" id="searchAddress" class="inputText" placeholder="北京市" /> -->
-					<input type="text" id="detailedAddress" class="inputText" placeholder="详细门牌地址" />
-					<input type="text" id="longitude" class="inputText" placeholder="经度" oninput="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" />
+					<input type="text" id="detailedAddress" autocomplete="off" class="inputText" placeholder="详细门牌地址" />
+					<input type="text" id="longitude" class="inputText" autocomplete="off" placeholder="经度" oninput="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" />
 					<span class="degree degree1">度</span>
 					<div id="exclamation">
 						<div id="helpText">
@@ -396,28 +396,28 @@
 						<div id="square"></div>
 						<img src="img/help.svg" />
 					</div>
-					<input type="text" id="latitude" class="inputText" placeholder="纬度" oninput="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')"/>
+					<input type="text" id="latitude" class="inputText" autocomplete="off" placeholder="纬度" oninput="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')"/>
 					<span class="degree degree1">度</span>
 
 				</div>
 				<div class="searchInput" id="shopPhone">
 					<!-- <img src="img/Down.svg" id="downIcon1"/> -->
 					<p class="shopNameFont">店铺手机</p>
-					<input type="text" id="phoneNum" class="inputText" placeholder="请输入店铺手机联系方式" oninput="value=value.replace(/[^\d]/g,'')"
+					<input type="text" id="phoneNum" class="inputText" autocomplete="off" placeholder="请输入店铺手机联系方式" oninput="value=value.replace(/[^\d]/g,'')"
 					 maxlength="11" />
 				</div>
 				<div class="searchInput" id="landline">
 					<p class="shopNameFont">店铺座机</p>
-					<input type="text" id="landlineNum" class="inputText" placeholder="输入店铺座机联系方式" oninput="value=value.replace(/[^\d]/g,'')"
+					<input type="text" id="landlineNum" class="inputText" autocomplete="off" placeholder="输入店铺座机联系方式" oninput="value=value.replace(/[^\d]/g,'')"
 					 maxlength="8" />
 				</div>
 				<div class="searchInput" id="openingHoursDiv">
 					<p class="shopNameFont">营业时间</p>
 					<!-- <img src="img/Time.svg" id="openingIcon" /> -->
-					<input type="text" id="openingHours" class="inputText" placeholder="8:00" />
+					<input type="text" autocomplete="off" id="openingHours" class="inputText" placeholder="8:00" />
 					<span class="degree degree1 to">至</span>
 					<!-- <img src="img/Time.svg" id="endingIcon" /> -->
-					<input type="text" id="endHours" class="inputText" placeholder="8:00" />
+					<input type="text" autocomplete="off" id="endHours" class="inputText" placeholder="8:00" />
 				</div>
 			</div>
 			<div id="middleFunction">
