@@ -435,11 +435,13 @@ li .noLast .gameName{
 	width:130px;
 	height:32px;
 	margin-left: 333px;
+	background: url(../img/Time.svg) no-repeat 115px;
 }
 #endTime{
 	width:130px;
 	height:32px;
 	float: left;
+	background: url(../img/Time.svg) no-repeat 115px;
 }
 .changeData span{
 	margin-left: 13px;
