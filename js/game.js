@@ -667,7 +667,7 @@ function getDataForAllMoney(myChart, idName, shopId, shopName, beginTime, endTim
 
 				$(".moneyAb").text("￥" + allMoneyNum);
 
-				init(myChart, idName, singleExperienceAggregateAmount, discountCoupon, internal, moreExperience);
+				init(myChart, idName, singleExperience, discountCoupon, internal, moreExperience);
 				if(idName == "main1") {
 					$.cookie("main1Money", allMoneyNum);
 					$("#today .data").find(".data1").eq(0).find(".frequency").text(singleExperience + "次");
