@@ -38,9 +38,10 @@ function addCoupon(startTime,endTime,class1) {
 		"end_time": endTime,	//有效时间
 		"class": class1, //等级
 		"type": "1", //类型
-		"hand_out_people": "hand_out_people_1" //发放人
+		"hand_out_people": $.cookie("userName"); //发放人
 	};
 	jsonData = JSON.stringify(jsonData);
+	console.log(jsonData);
 	$.ajax({
 		url: "http://step.nihaofuture.cn",
 		type: "post",
@@ -51,6 +52,8 @@ function addCoupon(startTime,endTime,class1) {
 			console.log(data);
 			if(data.status == "succeed"){
 				alert("添加成功");
+			}else{
+				alert("添加失败");
 			}
 		}
 	});
