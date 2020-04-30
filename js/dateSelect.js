@@ -27,6 +27,10 @@ function getData() {
 	if (startTime != 0 && lastTime != 0) {
 		console.log("time:" + startTime + "--" + lastTime);
 		if(page == "game"){
+			$("#today").fadeIn();
+			$("#week").fadeOut();
+			$("#month").fadeOut();
+			$("#year").fadeOut();
 			$(".checkDay li").removeClass("hoverli");
 			$(".changeData li").removeClass("choose");
 			initShopIdDate("main1", shopId, startTime, lastTime);

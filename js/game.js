@@ -135,7 +135,7 @@ $(function() {
 	$("#week").fadeOut();
 	$("#month").fadeOut();
 	$("#year").fadeOut();
-	$("#beginTime").change(function(){
+	$("#beginTime").click(function(){
 		allMoneyNum = 0;
 		singleExperienceAggregateAmount = 0; // 单次体验
 		discountCoupon = 0; //优惠券
@@ -143,8 +143,9 @@ $(function() {
 		moreExperience = 0; //不限次数
 		singleExperience = 0;
 		moreExperienceAggregateAmount = 0;
+		console.log("变变变")
 	});
-	$("#endTime").change(function(){
+	$("#endTime").click(function(){
 		allMoneyNum = 0;
 		singleExperienceAggregateAmount = 0; // 单次体验
 		discountCoupon = 0; //优惠券
@@ -680,7 +681,7 @@ function getDataForAllMoney(myChart, idName, shopId, shopName, beginTime, endTim
 					$("#today .moneyAll p:nth-of-type(2)").text("￥" + allMoneyNum);
 					// main1IsLoad = true;
 				} else if(idName == "main2") {
-					$.cookie("main2Money", data.aggregate_amount);
+					$.cookie("main2Money", allMoneyNum);
 					$("#week .data").find(".data1").eq(0).find(".frequency").text(singleExperience + "次");
 					$("#week .data").find(".data1").eq(0).find(".money").text("￥" + singleExperienceAggregateAmount);
 					$("#week .data").find(".data1").eq(1).find(".frequency").text(moreExperience + "次");
@@ -692,7 +693,7 @@ function getDataForAllMoney(myChart, idName, shopId, shopName, beginTime, endTim
 					$("#week .moneyAll p:nth-of-type(2)").text("￥" + allMoneyNum);
 					// main2IsLoad = true;
 				} else if(idName == "main3") {
-					$.cookie("main3Money", data.aggregate_amount);
+					$.cookie("main3Money", allMoneyNum);
 					$("#month .data").find(".data1").eq(0).find(".frequency").text(singleExperience + "次");
 					$("#month .data").find(".data1").eq(0).find(".money").text("￥" + singleExperienceAggregateAmount);
 					$("#month .data").find(".data1").eq(1).find(".frequency").text(moreExperience + "次");
@@ -704,7 +705,7 @@ function getDataForAllMoney(myChart, idName, shopId, shopName, beginTime, endTim
 					$("#month .moneyAll p:nth-of-type(2)").text("￥" + allMoneyNum);
 					// main3IsLoad = true;
 				} else if(idName == "main4") {
-					$.cookie("main4Money", data.aggregate_amount);
+					$.cookie("main4Money", allMoneyNum);
 					$("#year .data").find(".data1").eq(0).find(".frequency").text(singleExperience + "次");
 					$("#year .data").find(".data1").eq(0).find(".money").text("￥" + singleExperienceAggregateAmount);
 					$("#year .data").find(".data1").eq(1).find(".frequency").text(moreExperience + "次");
