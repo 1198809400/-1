@@ -135,6 +135,24 @@ $(function() {
 	$("#week").fadeOut();
 	$("#month").fadeOut();
 	$("#year").fadeOut();
+	$("#beginTime").change(function(){
+		allMoneyNum = 0;
+		singleExperienceAggregateAmount = 0; // 单次体验
+		discountCoupon = 0; //优惠券
+		internal = 0; //店员开启
+		moreExperience = 0; //不限次数
+		singleExperience = 0;
+		moreExperienceAggregateAmount = 0;
+	});
+	$("#endTime").change(function(){
+		allMoneyNum = 0;
+		singleExperienceAggregateAmount = 0; // 单次体验
+		discountCoupon = 0; //优惠券
+		internal = 0; //店员开启
+		moreExperience = 0; //不限次数
+		singleExperience = 0;
+		moreExperienceAggregateAmount = 0;
+	});
 	//tab框点击标题时
 	$(".seletion li").click(function() {
 		var text = $(this).text();
